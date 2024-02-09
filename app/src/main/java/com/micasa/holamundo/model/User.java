@@ -7,23 +7,23 @@ public class User implements Serializable {
 
     private Long id;
     private String name;
-    private Date fecha;
+    private String fecha_nacimiento;
     private String ocupacion;
     private String email;
     private int id_rol;
 
-    public User(Long id, String name, Date fecha, String ocupacion, String email, int id_rol) {
+    public User(Long id, String name, String fecha_nacimiento, String ocupacion, String email, int id_rol) {
         this.id = id;
         this.name = name;
-        this.fecha = fecha;
+        this.fecha_nacimiento = fecha_nacimiento;
         this.ocupacion = ocupacion;
         this.email = email;
         this.id_rol = id_rol;
     }
 
-    public User(String name, Date fecha, String ocupacion, String email, int id_rol) {
+    public User(String name, String fecha_nacimiento, String ocupacion, String email, int id_rol) {
         this.name = name;
-        this.fecha = fecha;
+        this.fecha_nacimiento = fecha_nacimiento;
         this.ocupacion = ocupacion;
         this.email = email;
         this.id_rol = id_rol;
@@ -45,12 +45,12 @@ public class User implements Serializable {
         this.name = name;
     }
 
-    public Date getFecha() {
-        return fecha;
+    public String getFecha_nacimiento() {
+        return fecha_nacimiento;
     }
 
-    public void setFecha(Date edad) {
-        this.fecha = fecha;
+    public void setFecha_nacimiento(String edad) {
+        this.fecha_nacimiento = fecha_nacimiento;
     }
 
     public String getOcupacion() {
@@ -82,7 +82,7 @@ public class User implements Serializable {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", fecha nacimiento=" + fecha +
+                ", fecha nacimiento=" + fecha_nacimiento +
                 ", ocupacion='" + ocupacion + '\'' +
                 ", email='" + email + '\'' +
                 ", id_rol=" + id_rol +

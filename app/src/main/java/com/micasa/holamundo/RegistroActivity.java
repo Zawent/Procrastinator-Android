@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -45,9 +46,9 @@ public class RegistroActivity extends AppCompatActivity {
         String name = caja1.getText().toString();
         String cajaFecha = caja2.getText().toString();
         SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
-        Date fecha = null;
+        Date fecha_nacimiento = null;
         try {
-            fecha = formato.parse(cajaFecha);
+            fecha_nacimiento = formato.parse(cajaFecha);
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
@@ -55,12 +56,14 @@ public class RegistroActivity extends AppCompatActivity {
         String ocupacion = caja3.getText().toString();
         String email = caja4.getText().toString();
         String password = caja5.getText().toString();
+        String fecha_n = formato.format(fecha_nacimiento);
         int id_rol = 2;
 
-        service.registrar(name, fecha, ocupacion, email, password, id_rol).enqueue(new Callback<RespuestaLogin>() {
+        service.registrar(name, fecha_n, ocupacion, email, password, id_rol).enqueue(new Callback<RespuestaLogin>() {
             @Override
             public void onResponse(Call<RespuestaLogin> call, Response<RespuestaLogin> response) {
                 if (response.isSuccessful()){
+
                     DataInfo.respuestaLogin=response.body();
                     Intent intent = new Intent(RegistroActivity.this, Pregunta1Activity.class);
                     intent.putExtra("user", DataInfo.respuestaLogin.getUser());
@@ -72,23 +75,9 @@ public class RegistroActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<RespuestaLogin> call, Throwable t) {
-                Toast.makeText(RegistroActivity.this, ""+t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegistroActivity.this, "---"+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-        /*
-        service.registrar(name, edad, ocupacion, email, password, id_rol).enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                Log.i("registro", response.body().toString());
-            }
-
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-
-                Log.i("registro", call.request().body().toString());
-                Log.i("registro", t.getMessage());
-            }
-        });*/
 
 
 

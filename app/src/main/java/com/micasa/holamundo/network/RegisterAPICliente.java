@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RegisterAPICliente {
 
-    private static final String URL = "http://192.168.1.9:8000/api/";
+    private static final String URL = "http://10.201.194.75:8000/api/";
 
     private static RegisterAPIService instance;
 
@@ -17,9 +17,10 @@ public class RegisterAPICliente {
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 
             final OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-            httpClient.addInterceptor(logging);*/
+            httpClient.addInterceptor(logging);
 
-            //Retrofit http = new Retrofit.Builder().baseUrl(URL).addConverterFactory(GsonConverterFactory.create()).client(httpClient.build()).build();
+            Retrofit http = new Retrofit.Builder().baseUrl(URL).addConverterFactory(GsonConverterFactory.create()).client(httpClient.build()).build();
+            */
 
             Retrofit http = new Retrofit.Builder().baseUrl(URL).addConverterFactory(GsonConverterFactory.create()).build();
             instance = http.create(RegisterAPIService.class);
