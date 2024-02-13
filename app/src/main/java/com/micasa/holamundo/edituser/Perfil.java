@@ -28,7 +28,7 @@ public class Perfil extends AppCompatActivity {
         if (user != null) {
             nombre_user.setText(user.getName());
         }else{
-            nombre_user.setText("User not found");
+            nombre_user.setText("User no");
         }
     }
 }
