@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
+import com.micasa.holamundo.edituser.Perfil;
 import com.micasa.holamundo.model.User;
 
 public class MenuInicioActivity extends AppCompatActivity {
@@ -24,9 +26,7 @@ public class MenuInicioActivity extends AppCompatActivity {
         si.setText(user.getName());
     }
 
-
-
-
+    public void goPerfil(View view) { startActivity(new Intent(this, Perfil.class));}
 
 
 }
