@@ -24,11 +24,12 @@ public class Perfil extends AppCompatActivity {
         Intent intent = getIntent();
         user = (User) intent.getSerializableExtra("user");
 
-        nombre_user = findViewById(R.id.txtnombre_user);
+        nombre_user = findViewById(R.id.txtnombre);
         if (user != null) {
             nombre_user.setText(user.getName());
         }else{
             nombre_user.setText("User no");
         }
     }
+
 }
