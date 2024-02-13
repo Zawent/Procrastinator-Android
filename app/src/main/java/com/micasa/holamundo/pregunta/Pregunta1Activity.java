@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.micasa.holamundo.DataInfo;
 import com.micasa.holamundo.FinEncuestaActivity;
 import com.micasa.holamundo.R;
 import com.micasa.holamundo.model.Pregunta;
@@ -59,7 +60,9 @@ public class Pregunta1Activity extends AppCompatActivity {
 
             }
         });
-        serviceP.getOne(1).enqueue(new Callback<Pregunta>() {
+        serviceP.getOne(DataInfo.respuestaLogin.getToken_type()+" "+
+                DataInfo.respuestaLogin.getAccess_token()
+                ,1).enqueue(new Callback<Pregunta>() {
             @Override
             public void onResponse(Call<Pregunta> call, Response<Pregunta> response) {
                 Log.i("ola1",""+response.body());
@@ -74,7 +77,7 @@ public class Pregunta1Activity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Pregunta> call, Throwable t) {
-                Log.i("ola","no");
+                Log.i("ola",t.getMessage());
             }
         });
 
@@ -82,7 +85,10 @@ public class Pregunta1Activity extends AppCompatActivity {
 
     public void nextSi (View view) {
         if (numPregunta <= cantPregunta) {
-            serviceP.getOne(numPregunta).enqueue(new Callback<Pregunta>() {
+            serviceP.getOne(DataInfo.respuestaLogin.getToken_type()+" "+
+                            DataInfo.respuestaLogin.getAccess_token()
+                    ,
+                    numPregunta).enqueue(new Callback<Pregunta>() {
                 @Override
                 public void onResponse(Call<Pregunta> call, Response<Pregunta> response) {
                     pregunta1 = response.body();
@@ -115,7 +121,10 @@ public class Pregunta1Activity extends AppCompatActivity {
 
     public void nextNo (View view) {
         if (numPregunta<=cantPregunta) {
-            serviceP.getOne(numPregunta).enqueue(new Callback<Pregunta>() {
+            serviceP.getOne(DataInfo.respuestaLogin.getToken_type()+" "+
+                            DataInfo.respuestaLogin.getAccess_token()
+                    ,
+                    numPregunta).enqueue(new Callback<Pregunta>() {
                 @Override
                 public void onResponse(Call<Pregunta> call, Response<Pregunta> response) {
                     pregunta1 = response.body();
