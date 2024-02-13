@@ -11,6 +11,7 @@ public class User implements Serializable {
     private String ocupacion;
     private String email;
     private int id_rol;
+    private int nivel_id;
 
     public User(Long id, String name, String fecha_nacimiento, String ocupacion, String email, int id_rol) {
         this.id = id;
@@ -27,6 +28,25 @@ public class User implements Serializable {
         this.ocupacion = ocupacion;
         this.email = email;
         this.id_rol = id_rol;
+    }
+
+    public User(Long id, String name, String fecha_nacimiento, String ocupacion, String email, int id_rol, int nivel_id) {
+        this.id = id;
+        this.name = name;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.ocupacion = ocupacion;
+        this.email = email;
+        this.id_rol = id_rol;
+        this.nivel_id = nivel_id;
+    }
+
+    public User(String name, String fecha_nacimiento, String ocupacion, String email, int id_rol, int nivel_id) {
+        this.name = name;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.ocupacion = ocupacion;
+        this.email = email;
+        this.id_rol = id_rol;
+        this.nivel_id = nivel_id;
     }
 
     public Long getId() {
@@ -77,15 +97,24 @@ public class User implements Serializable {
         this.id_rol = id_rol;
     }
 
+    public int getNivel_id() {
+        return nivel_id;
+    }
+
+    public void setNivel_id(int nivel_id) {
+        this.nivel_id = nivel_id;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", fecha nacimiento=" + fecha_nacimiento +
+                ", fecha_nacimiento='" + fecha_nacimiento + '\'' +
                 ", ocupacion='" + ocupacion + '\'' +
                 ", email='" + email + '\'' +
                 ", id_rol=" + id_rol +
+                ", nivel_id=" + nivel_id +
                 '}';
     }
 }

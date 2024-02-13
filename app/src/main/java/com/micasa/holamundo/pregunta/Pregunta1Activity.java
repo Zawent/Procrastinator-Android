@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.micasa.holamundo.DataInfo;
 import com.micasa.holamundo.FinEncuestaActivity;
 import com.micasa.holamundo.R;
+import com.micasa.holamundo.RegistroActivity;
 import com.micasa.holamundo.model.Pregunta;
 import com.micasa.holamundo.model.Respuesta;
 import com.micasa.holamundo.model.User;
@@ -45,6 +46,8 @@ public class Pregunta1Activity extends AppCompatActivity {
         user = (User) intent.getSerializableExtra("user");
         serviceP = PreguntaAPICliente.getPreguntaService();
         serviceR = RespuestaAPICliente.getRespuestaService();
+
+
         serviceP.getCantidad().enqueue(new Callback<Integer>() {
             @Override
             public void onResponse(Call<Integer> call, Response<Integer> response) {
@@ -102,7 +105,9 @@ public class Pregunta1Activity extends AppCompatActivity {
             });
         } else {
             Intent intent = new Intent(Pregunta1Activity.this, FinEncuestaActivity.class);
+           // intent.putExtra("user", user);
             startActivity(intent);
+
         }
 
         serviceR.sendRespuesta(user.getId(), 2L, null, (long) numPregunta-1).enqueue(new Callback<Respuesta>() {
@@ -138,6 +143,7 @@ public class Pregunta1Activity extends AppCompatActivity {
             });
         } else {
             Intent intent = new Intent(Pregunta1Activity.this, FinEncuestaActivity.class);
+           // intent.putExtra("user", user);
             startActivity(intent);
         }
 
