@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.micasa.holamundo.model.User;
@@ -19,20 +23,24 @@ public class FinEncuestaActivity extends AppCompatActivity {
 
     User user;
     TextView nivel;
-
+    private LinearLayout overlayLayout;
     LoginAPIService service;
+    private Button btnBloqueo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fin_encuesta);
         service = LoginAPICliente.getLoginService();
+        overlayLayout = findViewById(R.id.overlayLayout);
+        overlayLayout.setVisibility(View.VISIBLE);
 
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+
         service.getUser(
                 DataInfo.respuestaLogin.getToken_type()+" "+
                         DataInfo.respuestaLogin.getAccess_token()
@@ -50,10 +58,17 @@ public class FinEncuestaActivity extends AppCompatActivity {
                 Log.e("error",t.getMessage());
             }
         });
+
     }
 
     private void fijarNivel() {
         nivel = findViewById(R.id.nivelUser);
         nivel.setText(""+user.getNivel_id());
     }
+
+    public void irABloqueo(View view) {
+        Intent intent = new Intent(this, BloqueoActivity.class);
+        startActivity(intent);
+    }
+
 }

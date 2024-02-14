@@ -16,10 +16,7 @@
         android:theme="@style/Theme.Holamundo"
         tools:targetApi="31">
         <activity
-            android:name=".edituser.perfil_edit"
-            android:exported="false" />
-        <activity
-            android:name=".edituser.Perfil"
+            android:name=".BloqueoActivity"
             android:exported="false" />
         <activity
             android:name=".FinEncuestaActivity"
