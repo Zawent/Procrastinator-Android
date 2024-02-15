@@ -10,12 +10,13 @@
     <LinearLayout
         android:id="@+id/overlayLayout"
         android:layout_width="0dp"
-        android:layout_height="68dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="1dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button17">
 
         <Button
             android:id="@+id/button12"
@@ -74,9 +75,13 @@
         android:id="@+id/button17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="310dp"
+        android:layout_marginBottom="304dp"
         android:onClick="irABloqueo"
         android:text="Bloquear"
-        tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="310dp" />
+        app:layout_constraintBottom_toTopOf="@+id/overlayLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,8 +31,8 @@ public class MenuInicioActivity extends AppCompatActivity {
 
     }
 
+    public void irAPerfil(View view) {startActivity(new Intent(this, Perfil.class));}
 
-    public void irperfil (View view) { startActivity(new Intent(this, Perfil.class));}
 
 
 
