@@ -25,7 +25,7 @@
             android:name=".pregunta.Pregunta1Activity"
             android:exported="false" />
         <activity
-            android:name=".user.UserEditActivity"
+            android:name=".edituser.Perfil"
             android:exported="false" />
         <activity
             android:name=".MenuInicioActivity"

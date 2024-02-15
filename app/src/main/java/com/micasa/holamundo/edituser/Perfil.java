@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.micasa.holamundo.DataInfo;
 import com.micasa.holamundo.R;
+import com.micasa.holamundo.model.Nivel;
 import com.micasa.holamundo.model.User;
 import com.micasa.holamundo.network.LoginAPICliente;
 import com.micasa.holamundo.network.LoginAPIService;
@@ -21,6 +22,7 @@ public class Perfil extends AppCompatActivity {
 
 
     User user;
+    Nivel nivel;
     TextView nombre_user;
     TextView nivel_user;
     TextView texto_nivel;
@@ -50,9 +52,6 @@ public class Perfil extends AppCompatActivity {
                     user=response.body();
                     fijarNombre();
                     fijarNivel();
-                   /* fijarTextoNivel();
-                    fijarFecha();
-                    fijarOcupacion();*/
                 }
             }
 
@@ -77,5 +76,7 @@ public class Perfil extends AppCompatActivity {
         nivel_user = findViewById(R.id.txtnivel);
         nivel_user.setText(""+user.getNivel_id());
     }
+
+
 
 }
