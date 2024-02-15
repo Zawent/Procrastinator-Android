@@ -24,8 +24,9 @@
         <activity
             android:name=".pregunta.Pregunta1Activity"
             android:exported="false" />
-        <activity
-            android:name=".user.UserEditActivity"
+        <activity android:name=".edituser.Perfil"
+            android:exported="false" />
+        <activity android:name=".edituser.perfil_edit"
             android:exported="false" />
         <activity
             android:name=".MenuInicioActivity"

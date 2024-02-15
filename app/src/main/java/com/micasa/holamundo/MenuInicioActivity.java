@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.micasa.holamundo.edituser.Perfil;
 import com.micasa.holamundo.model.User;
 
 public class MenuInicioActivity extends AppCompatActivity {
@@ -30,7 +31,7 @@ public class MenuInicioActivity extends AppCompatActivity {
 
     }
 
-
+    public void irAPerfil(View view) {startActivity(new Intent(this, Perfil.class));}
 
 
 

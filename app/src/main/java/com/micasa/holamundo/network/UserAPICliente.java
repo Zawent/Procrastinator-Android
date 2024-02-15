@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class UserAPICliente {
 
-    private static final String URL = "http://10.201.194.30:8000/api/";
+    private static final String URL = "http://10.201.194.75:8000/api/";
 
     private static UserAPIService instance;
     private static UserAPIService getUserService(){

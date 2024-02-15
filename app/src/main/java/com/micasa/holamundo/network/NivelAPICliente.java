@@ -5,27 +5,25 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RegisterAPICliente {
+public class NivelAPICliente {
 
     private static final String URL = "http://10.201.194.75:8000/api/";
+    private static NivelAPIService instance;
 
-    private static RegisterAPIService instance;
-
-    public static RegisterAPIService getRegisterService() {
+    public static NivelAPIService getNivelService() {
         if (instance==null) {
-            /*final HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+            final HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 
             final OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
             httpClient.addInterceptor(logging);
 
             Retrofit http = new Retrofit.Builder().baseUrl(URL).addConverterFactory(GsonConverterFactory.create()).client(httpClient.build()).build();
-            */
 
-            Retrofit http = new Retrofit.Builder().baseUrl(URL).addConverterFactory(GsonConverterFactory.create()).build();
-            instance = http.create(RegisterAPIService.class);
+            // http = new Retrofit.Builder().baseUrl(URL).addConverterFactory(GsonConverterFactory.create()).build();
+            instance = http.create(NivelAPIService.class);
         }
         return instance;
     }
-
 }
+
