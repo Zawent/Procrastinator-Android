@@ -12,15 +12,14 @@ public class NivelAPICliente {
 
     public static NivelAPIService getNivelService() {
         if (instance==null) {
-            final HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+            /*final HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 
             final OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-            httpClient.addInterceptor(logging);
+            httpClient.addInterceptor(logging);*/
 
-            Retrofit http = new Retrofit.Builder().baseUrl(URL).addConverterFactory(GsonConverterFactory.create()).client(httpClient.build()).build();
-
-            // http = new Retrofit.Builder().baseUrl(URL).addConverterFactory(GsonConverterFactory.create()).build();
+            //Retrofit http = new Retrofit.Builder().baseUrl(URL).addConverterFactory(GsonConverterFactory.create()).client(httpClient.build()).build();
+            Retrofit http = new Retrofit.Builder().baseUrl(URL).addConverterFactory(GsonConverterFactory.create()).build();
             instance = http.create(NivelAPIService.class);
         }
         return instance;

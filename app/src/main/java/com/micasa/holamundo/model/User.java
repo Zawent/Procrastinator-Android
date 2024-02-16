@@ -49,6 +49,13 @@ public class User implements Serializable {
         this.nivel_id = nivel_id;
     }
 
+    public User(Long id, String name, String fecha_nacimiento, String ocupacion) {
+        this.id = id;
+        this.name = name;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.ocupacion = ocupacion;
+    }
+
     public Long getId() {
         return id;
     }

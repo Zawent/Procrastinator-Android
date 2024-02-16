@@ -49,6 +49,7 @@ public class FinEncuestaActivity extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
                     user=response.body();
+                    DataInfo.respuestaLogin.setUser(user);
                     fijarNivel();
                 }
             }
@@ -69,6 +70,10 @@ public class FinEncuestaActivity extends AppCompatActivity {
     public void irABloqueo(View view) {
         Intent intent = new Intent(this, BloqueoActivity.class);
         startActivity(intent);
+    }
+
+    public void irAEditar () {
+    
     }
 
 }
