@@ -1,10 +1,9 @@
-package com.micasa.holamundo.edituser;
+package com.micasa.holamundo.yalogueado.edituser;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,8 +16,6 @@ import com.micasa.holamundo.DataInfo;
 import com.micasa.holamundo.R;
 import com.micasa.holamundo.model.Nivel;
 import com.micasa.holamundo.model.User;
-import com.micasa.holamundo.network.LoginAPICliente;
-import com.micasa.holamundo.network.LoginAPIService;
 import com.micasa.holamundo.network.NivelAPICliente;
 import com.micasa.holamundo.network.NivelAPIService;
 import com.micasa.holamundo.network.UserAPICliente;
@@ -159,8 +156,6 @@ public class Perfil extends AppCompatActivity {
     }
 
     public void guardarPerfil(View view) {
-
-
         AlertDialog.Builder builder = new AlertDialog.Builder(Perfil.this);
         builder.setMessage("¿Estas seguro de guardar cambios?").setCancelable(false).setPositiveButton("Si", new DialogInterface.OnClickListener() {
             @Override
@@ -178,7 +173,7 @@ public class Perfil extends AppCompatActivity {
                 user.setName(nombre);
                 user.setFecha_nacimiento(fecha);
                 user.setOcupacion(ocupacion);
-                serviceUser.updateUser("",user.getId(), user).enqueue(new Callback<User>() {
+                serviceUser.updateUser(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(),user.getId(), user).enqueue(new Callback<User>() {
                     @Override
                     public void onResponse(Call<User> call, Response<User> response) {
                         if (response.isSuccessful()) {
@@ -189,6 +184,15 @@ public class Perfil extends AppCompatActivity {
                             fijarTextoNivel();
                             fijarFecha();
                             fijarOcupacion();
+                            btnCancelar.setVisibility(View.INVISIBLE);
+                            btnGuardar.setVisibility(View.INVISIBLE);
+                            editOcupacion.setVisibility(View.INVISIBLE);
+                            editFecha.setVisibility(View.INVISIBLE);
+                            editNombre.setVisibility(View.INVISIBLE);
+                            nombre_user.setVisibility(View.VISIBLE);
+                            fecha_user.setVisibility(View.VISIBLE);
+                            ocupacion_user.setVisibility(View.VISIBLE);
+                            btnEditar.setVisibility(View.VISIBLE);
                         }
                     }
 
@@ -201,8 +205,31 @@ public class Perfil extends AppCompatActivity {
         }).setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                btnCancelar.setVisibility(View.INVISIBLE);
+                btnGuardar.setVisibility(View.INVISIBLE);
+                editOcupacion.setVisibility(View.INVISIBLE);
+                editFecha.setVisibility(View.INVISIBLE);
+                editNombre.setVisibility(View.INVISIBLE);
+                nombre_user.setVisibility(View.VISIBLE);
+                fecha_user.setVisibility(View.VISIBLE);
+                ocupacion_user.setVisibility(View.VISIBLE);
+                btnEditar.setVisibility(View.VISIBLE);
             }
         });
+        builder.create().show();
     }
+
+    public void cancelarPerfil(View view){
+        btnCancelar.setVisibility(View.INVISIBLE);
+        btnGuardar.setVisibility(View.INVISIBLE);
+        editOcupacion.setVisibility(View.INVISIBLE);
+        editFecha.setVisibility(View.INVISIBLE);
+        editNombre.setVisibility(View.INVISIBLE);
+        nombre_user.setVisibility(View.VISIBLE);
+        fecha_user.setVisibility(View.VISIBLE);
+        ocupacion_user.setVisibility(View.VISIBLE);
+        btnEditar.setVisibility(View.VISIBLE);
+    }
+
+
 }

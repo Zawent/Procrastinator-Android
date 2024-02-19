@@ -17,13 +17,13 @@ import retrofit2.http.Path;
 
 public interface UserAPIService {
 
-    @GET("user")
+    @GET("auth/user")
     Call<List<User>> getAll();
 
-    @GET("user/{id}")
+    @GET("auth/user/{id}")
     Call <User> getOne(@Path("id")long id);
 
 
-    @PUT("user/edit/{id}")
+    @PUT("auth/user/{id}")
     Call <User> updateUser(@Header("Authorization") String authorization, @Path("id")long id, @Body User user);
 }

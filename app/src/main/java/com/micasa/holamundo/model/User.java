@@ -76,7 +76,7 @@ public class User implements Serializable {
         return fecha_nacimiento;
     }
 
-    public void setFecha_nacimiento(String edad) {
+    public void setFecha_nacimiento(String fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
