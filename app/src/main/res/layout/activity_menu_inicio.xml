@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#888585"
+    android:background="#F1CFFF"
     tools:context=".yalogueado.MenuInicioActivity">
 
     <LinearLayout
@@ -28,6 +28,7 @@
             android:layout_width="112dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:backgroundTint="#F18D4B"
             android:src="@android:drawable/ic_lock_idle_lock" />
 
         <ImageButton
@@ -35,6 +36,7 @@
             android:layout_width="115dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:backgroundTint="#F18D4B"
             android:onClick="irAPerfil"
             android:src="@android:drawable/ic_menu_myplaces" />
 
@@ -43,6 +45,7 @@
             android:layout_width="124dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:backgroundTint="#F18D4B"
             android:src="@android:drawable/btn_star" />
 
         <ImageButton
@@ -50,6 +53,7 @@
             android:layout_width="106dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:backgroundTint="#F18D4B"
             android:src="@android:drawable/ic_popup_reminder" />
 
         <ImageButton
@@ -57,6 +61,7 @@
             android:layout_width="111dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:backgroundTint="#F18D4B"
             android:src="@android:drawable/ic_menu_manage" />
 
     </LinearLayout>
