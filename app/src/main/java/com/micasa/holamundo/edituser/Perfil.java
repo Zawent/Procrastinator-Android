@@ -30,6 +30,7 @@ public class Perfil extends AppCompatActivity {
     TextView fecha_user;
     TextView ocupacion_user;
 
+
     LoginAPIService serviceLog;
     NivelAPIService serviceNivel;
 
@@ -106,7 +107,5 @@ public class Perfil extends AppCompatActivity {
         ocupacion_user = findViewById(R.id.txtocupacion);
         ocupacion_user.setText(""+user.getOcupacion());
     }
-
-
 
 }
