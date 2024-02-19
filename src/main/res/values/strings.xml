@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ProcasNew</string>
+    <string name="select_app">Selecciona una aplicación</string>
+    <string name="hours">Horas</string>
+    <string name="minutes">Minutos</string>
+    <string name="seconds">Segundos</string>
+    <string name="start_blocking">Iniciar Bloqueo</string>
+
+</resources>
