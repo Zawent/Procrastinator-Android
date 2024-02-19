@@ -5,16 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".edituser.Perfil">
+    tools:context=".yalogueado.edituser.Perfil">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="409dp"
-        android:layout_height="128dp"
-        android:layout_marginBottom="116dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="105dp"
         android:background="#7DE1D8"
-        app:layout_constraintBottom_toTopOf="@+id/txtfechanacimiento"
-        tools:layout_editor_absoluteX="1dp">
+        app:layout_constraintBottom_toTopOf="@+id/editFecha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editName">
 
         <TextView
             android:id="@+id/textView4"
@@ -103,12 +107,14 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="99dp"
         android:text="Edad"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.736"
+        app:layout_constraintStart_toEndOf="@+id/editFecha"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.683" />
@@ -172,6 +178,7 @@
         android:id="@+id/btneditaruser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="editarPerfil"
         android:text="Editar perfil"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -183,14 +190,14 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="56dp"
+        android:layout_width="0dp"
         android:layout_height="59dp"
-        android:layout_marginStart="91dp"
+        android:layout_marginStart="86dp"
         android:layout_marginTop="110dp"
-        android:layout_marginEnd="92dp"
+        android:layout_marginEnd="28dp"
         android:layout_marginBottom="35dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toStartOf="@+id/txtNombre"
+        app:layout_constraintEnd_toStartOf="@+id/editName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/alert_dark_frame" />
@@ -208,4 +215,68 @@
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editOcupacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="139dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editFecha" />
+
+    <EditText
+        android:id="@+id/editFecha"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="60dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/editOcupacion"
+        app:layout_constraintEnd_toStartOf="@+id/textView10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="138dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="22dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnGuardarUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:onClick="guardarPerfil"
+        android:text="Guardar"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btneditaruser"
+        app:layout_constraintEnd_toStartOf="@+id/btneditaruser" />
+
+    <Button
+        android:id="@+id/btnCancelarUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:onClick="cancelarPerfil"
+        android:text="Cancelar"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btneditaruser"
+        app:layout_constraintStart_toEndOf="@+id/btneditaruser" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

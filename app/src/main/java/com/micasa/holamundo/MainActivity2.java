@@ -10,9 +10,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.micasa.holamundo.model.RespuestaLogin;
-import com.micasa.holamundo.model.User;
 import com.micasa.holamundo.network.LoginAPICliente;
 import com.micasa.holamundo.network.LoginAPIService;
+import com.micasa.holamundo.yalogueado.MenuInicioActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;

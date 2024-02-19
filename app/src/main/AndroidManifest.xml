@@ -24,12 +24,12 @@
         <activity
             android:name=".pregunta.Pregunta1Activity"
             android:exported="false" />
-        <activity android:name=".edituser.Perfil"
+        <activity android:name=".yalogueado.edituser.Perfil"
             android:exported="false" />
-        <activity android:name=".edituser.perfil_edit"
+        <activity android:name=".yalogueado.edituser.perfil_edit"
             android:exported="false" />
         <activity
-            android:name=".MenuInicioActivity"
+            android:name=".yalogueado.MenuInicioActivity"
             android:exported="false" />
         <activity
             android:name=".RegistroActivity"
