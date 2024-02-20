@@ -54,6 +54,7 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:backgroundTint="#EC5F00"
+            android:onClick="irAConsejos"
             android:src="@drawable/consejos_y_trucos__1_" />
 
         <ImageButton

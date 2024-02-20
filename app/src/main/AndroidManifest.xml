@@ -31,9 +31,6 @@
             android:name=".yalogueado.edituser.Perfil"
             android:exported="false" />
         <activity
-            android:name=".yalogueado.edituser.perfil_edit"
-            android:exported="false" />
-        <activity
             android:name=".yalogueado.MenuInicioActivity"
             android:exported="false" />
         <activity
