@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#888585"
+    android:background="#D1C7C7"
     tools:context=".MainActivity2">
 
     <ImageView
@@ -19,8 +19,8 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="0dp"
-        android:layout_height="1106dp"
+        android:layout_width="418dp"
+        android:layout_height="1114dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="83dp"
@@ -47,8 +47,9 @@
             android:id="@+id/txtUser"
             android:layout_width="258dp"
             android:layout_height="61dp"
+            android:paddingStart="16dp"
             android:layout_marginTop="148dp"
-            android:background="@color/negroclaro"
+            android:background="@drawable/redondosnputs"
             android:ems="10"
             android:hint="Usuario"
             android:inputType="text"
@@ -63,8 +64,10 @@
             android:layout_width="259dp"
             android:layout_height="52dp"
             android:layout_marginTop="48dp"
+            android:paddingStart="16dp"
             android:ems="10"
             android:hint="Contraseña"
+            android:background="@drawable/redondosnputs"
             android:inputType="textPassword"
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="@+id/txtUser"

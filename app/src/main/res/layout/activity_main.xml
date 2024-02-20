@@ -5,23 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="2sp"
-    android:background="#888585"
+    android:background="#FDECD4"
     tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:layout_marginBottom="178dp"
-        android:text="Procrastinatorn't"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -38,6 +23,7 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#0072EC"
             android:text="Facebook"
             android:textSize="25sp" />
 
@@ -45,6 +31,7 @@
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#E31B1B"
             android:text="Google"
             android:textSize="25sp" />
 
@@ -52,6 +39,7 @@
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#EC5F00"
             android:onClick="login"
             android:text="Login"
             android:textSize="25sp" />
@@ -68,8 +56,7 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -108,25 +95,35 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="48dp"
         android:text="Aun no tienes cuenta?"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/txtRegistro"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="88dp"
         android:text="@string/registro"
         android:textColorHighlight="#FF0000"
+        android:textColorLink="#EC5F00"
         android:textSize="25sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="259dp"
+        android:layout_height="235dp"
+        app:srcCompat="@drawable/procraslogo"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="114dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

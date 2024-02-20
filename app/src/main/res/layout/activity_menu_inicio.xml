@@ -26,43 +26,43 @@
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="112dp"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
             android:layout_weight="1"
-            android:backgroundTint="#F18D4B"
-            android:src="@android:drawable/ic_lock_idle_lock" />
+            android:backgroundTint="#EC5F00"
+            android:src="@drawable/cerrar__1___2_" />
 
         <ImageButton
             android:id="@+id/imageButton2"
-            android:layout_width="115dp"
-            android:layout_height="match_parent"
+            android:layout_width="112dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
-            android:backgroundTint="#F18D4B"
+            android:backgroundTint="#EC5F00"
             android:onClick="irAPerfil"
-            android:src="@android:drawable/ic_menu_myplaces" />
+            android:src="@drawable/usuario__1_" />
 
         <ImageButton
             android:id="@+id/imageButton3"
-            android:layout_width="124dp"
-            android:layout_height="match_parent"
+            android:layout_width="112dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
-            android:backgroundTint="#F18D4B"
-            android:src="@android:drawable/btn_star" />
+            android:backgroundTint="#EC5F00"
+            android:src="@drawable/estadisticas__1_" />
 
         <ImageButton
             android:id="@+id/imageButton4"
-            android:layout_width="106dp"
-            android:layout_height="match_parent"
+            android:layout_width="112dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
-            android:backgroundTint="#F18D4B"
-            android:src="@android:drawable/ic_popup_reminder" />
+            android:backgroundTint="#EC5F00"
+            android:src="@drawable/consejos_y_trucos__1_" />
 
         <ImageButton
             android:id="@+id/imageButton5"
-            android:layout_width="111dp"
-            android:layout_height="match_parent"
+            android:layout_width="112dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
-            android:backgroundTint="#F18D4B"
-            android:src="@android:drawable/ic_menu_manage" />
+            android:backgroundTint="#EC5F00"
+            android:src="@drawable/llave__1_" />
 
     </LinearLayout>
 
