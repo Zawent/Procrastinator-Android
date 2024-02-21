@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ProcastNew</string>
+    <string-array name="apps_array">
+        <item>App 1</item>
+        <item>App 2</item>
+        <item>App 3</item>
+    </string-array>
+</resources>
