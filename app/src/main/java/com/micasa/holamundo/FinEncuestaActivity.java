@@ -32,8 +32,6 @@ public class FinEncuestaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fin_encuesta);
         service = LoginAPICliente.getLoginService();
-        overlayLayout = findViewById(R.id.overlayLayout);
-        overlayLayout.setVisibility(View.VISIBLE);
 
     }
 

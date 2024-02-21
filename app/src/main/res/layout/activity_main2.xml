@@ -23,9 +23,10 @@
         android:layout_height="1114dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="83dp"
+        android:layout_marginBottom="92dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/procras" />
@@ -102,14 +103,16 @@
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="339dp"
-        android:layout_height="321dp"
+        android:layout_width="267dp"
+        android:layout_height="231dp"
         android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/procraslogo" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.596"
+        app:srcCompat="@drawable/logoeste" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"

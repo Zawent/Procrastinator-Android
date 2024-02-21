@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1CFFF"
+    android:background="#FCF6DC"
     tools:context=".yalogueado.MenuInicioActivity">
 
     <LinearLayout
         android:id="@+id/overlayLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="46dp"
+        android:layout_width="433dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="4dp"
         android:orientation="horizontal"
         android:paddingLeft="2sp"
         android:paddingTop="5sp"
@@ -19,50 +19,48 @@
         android:paddingBottom="2sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="112dp"
-            android:layout_height="100dp"
+            android:layout_height="125dp"
             android:layout_weight="1"
-            android:backgroundTint="#EC5F00"
+            android:backgroundTint="#5D0582"
             android:src="@drawable/cerrar__1___2_" />
 
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="112dp"
-            android:layout_height="100dp"
+            android:layout_height="125dp"
             android:layout_weight="1"
-            android:backgroundTint="#EC5F00"
+            android:backgroundTint="#5D0582"
             android:onClick="irAPerfil"
             android:src="@drawable/usuario__1_" />
 
         <ImageButton
             android:id="@+id/imageButton3"
             android:layout_width="112dp"
-            android:layout_height="100dp"
+            android:layout_height="125dp"
             android:layout_weight="1"
-            android:backgroundTint="#EC5F00"
+            android:backgroundTint="#5D0582"
             android:src="@drawable/estadisticas__1_" />
 
         <ImageButton
             android:id="@+id/imageButton4"
             android:layout_width="112dp"
-            android:layout_height="100dp"
+            android:layout_height="125dp"
             android:layout_weight="1"
-            android:backgroundTint="#EC5F00"
+            android:backgroundTint="#5D0582"
             android:onClick="irAConsejos"
             android:src="@drawable/consejos_y_trucos__1_" />
 
         <ImageButton
             android:id="@+id/imageButton5"
             android:layout_width="112dp"
-            android:layout_height="100dp"
+            android:layout_height="140dp"
             android:layout_weight="1"
-            android:backgroundTint="#EC5F00"
+            android:backgroundTint="#5D0582"
             android:src="@drawable/llave__1_" />
 
     </LinearLayout>
@@ -71,69 +69,75 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="561dp"
+        android:layout_marginTop="45dp"
         android:text="Consejo del Dia"
+        android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/overlayLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout6"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginBottom="146dp"
-        android:orientation="horizontal"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/consejoDia"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/consejoDia"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cuadritoazul"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.302" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="371dp"
+        android:layout_height="126dp"
+        android:background="@drawable/cuadritomitadmarron"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20sp"
-            android:layout_marginRight="15sp"
-            android:text="Bienvenido"
-            android:textSize="35sp" />
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="3dp"
+            android:text="¡Bienvenido!"
+            android:textColor="#000000"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/BvNombre"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/BvNombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="3dp"
             android:text="TextView"
-            android:textSize="35sp" />
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="0dp"
-        android:layout_height="182dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="52dp"
-        android:src="@android:drawable/screen_background_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/consejoDia"
-        android:layout_width="281dp"
-        android:layout_height="159dp"
-        android:layout_marginStart="63dp"
-        android:layout_marginEnd="63dp"
-        android:layout_marginBottom="475dp"
-        android:text="TextView"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
+            android:textColor="#000000"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
