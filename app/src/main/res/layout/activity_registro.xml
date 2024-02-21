@@ -33,14 +33,15 @@
 
         <LinearLayout
             android:id="@+id/linearLayout4"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="358dp"
+            android:layout_height="103dp"
             android:layout_marginStart="38dp"
             android:layout_marginEnd="38dp"
             android:layout_marginBottom="16dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9">
 
@@ -50,7 +51,8 @@
                 android:layout_height="74dp"
                 android:backgroundTint="@color/black"
                 android:onClick="guardarUser"
-                android:text="Registrar" />
+                android:text="Registrar"
+                android:textColor="#FFFFFF" />
 
 
             <Button
@@ -59,7 +61,8 @@
                 android:layout_height="73dp"
                 android:layout_marginLeft="50sp"
                 android:backgroundTint="@color/black"
-                android:text="Cancelar" />
+                android:text="Cancelar"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
 
         <TextView
@@ -70,6 +73,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="504dp"
             android:text="Registro de Usuario"
+            android:textColor="#000000"
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
@@ -94,6 +98,7 @@
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:text="NOMBRE" />
 
             <EditText
@@ -103,6 +108,7 @@
                 android:layout_marginBottom="20sp"
                 android:background="@drawable/redondosnputs"
                 android:ems="10"
+                android:textColor="#000000"
                 android:inputType="text"
                 android:paddingStart="16dp"
                 android:textSize="25sp" />
@@ -111,6 +117,7 @@
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:text="FECHA DE NACIMIENTO" />
 
             <EditText
@@ -120,6 +127,7 @@
                 android:layout_marginBottom="20sp"
                 android:background="@drawable/redondosnputs"
                 android:ems="10"
+                android:textColor="#000000"
                 android:inputType="date"
                 android:paddingStart="16dp"
                 android:textSize="25sp" />
@@ -127,6 +135,7 @@
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
+                android:textColor="#000000"
                 android:layout_height="wrap_content"
                 android:text="OCUPACIÓN" />
 
@@ -134,6 +143,7 @@
                 android:id="@+id/editTextOcupacion"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:textColor="#000000"
                 android:layout_marginBottom="20sp"
                 android:background="@drawable/redondosnputs"
                 android:ems="10"
@@ -144,12 +154,14 @@
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
+                android:textColor="#000000"
                 android:layout_height="wrap_content"
                 android:text="EMAIL" />
 
             <EditText
                 android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
+                android:textColor="#000000"
                 android:layout_height="50dp"
                 android:layout_marginBottom="20sp"
                 android:background="@drawable/redondosnputs"
@@ -161,6 +173,7 @@
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
+                android:textColor="#000000"
                 android:layout_height="wrap_content"
                 android:text="CONTRASEÑA" />
 
@@ -168,6 +181,7 @@
                 android:id="@+id/editTextContraseña"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:textColor="#000000"
                 android:background="@drawable/redondosnputs"
                 android:ems="10"
                 android:inputType="textPassword"
@@ -182,7 +196,7 @@
         android:layout_width="419dp"
         android:layout_height="295dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="-15dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
