@@ -7,6 +7,64 @@
     android:background="#F1CFFF"
     tools:context=".yalogueado.edituser.Perfil">
 
+    <LinearLayout
+        android:id="@+id/overlayLayout"
+        android:layout_width="433dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal"
+        android:paddingLeft="2sp"
+        android:paddingTop="5sp"
+        android:paddingRight="2sp"
+        android:paddingBottom="2sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="112dp"
+            android:layout_height="125dp"
+            android:layout_weight="1"
+            android:backgroundTint="#5D0582"
+            android:src="@drawable/cerrar__1___2_" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="112dp"
+            android:layout_height="125dp"
+            android:layout_weight="1"
+            android:backgroundTint="#5D0582"
+            android:onClick="irAPerfil"
+            android:src="@drawable/usuario__1_" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="112dp"
+            android:layout_height="125dp"
+            android:layout_weight="1"
+            android:backgroundTint="#5D0582"
+            android:src="@drawable/estadisticas__1_" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="112dp"
+            android:layout_height="125dp"
+            android:layout_weight="1"
+            android:backgroundTint="#5D0582"
+            android:onClick="irAConsejos"
+            android:src="@drawable/consejos_y_trucos__1_" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="112dp"
+            android:layout_height="140dp"
+            android:layout_weight="1"
+            android:backgroundTint="#5D0582"
+            android:src="@drawable/llave__1_" />
+
+    </LinearLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="415dp"
@@ -238,7 +296,7 @@
         android:id="@+id/btneditaruser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="104dp"
         android:backgroundTint="#FFEC5F02"
         android:onClick="editarPerfil"
@@ -246,14 +304,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnCancelarUser"
         app:layout_constraintTop_toBottomOf="@+id/txtocupacion"
-        app:layout_constraintVertical_bias="0.98"
+        app:layout_constraintVertical_bias="0.771"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnCancelarUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="12dp"
         android:layout_marginBottom="104dp"
         android:backgroundTint="#5D0582"
         android:onClick="cancelarPerfil"
@@ -261,13 +319,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtocupacion"
-        app:layout_constraintVertical_bias="0.98" />
+        app:layout_constraintVertical_bias="0.771" />
 
     <Button
         android:id="@+id/btnGuardarUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="104dp"
         android:backgroundTint="#5D0582"
         android:onClick="guardarPerfil"
@@ -275,6 +333,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btneditaruser"
         app:layout_constraintTop_toBottomOf="@+id/txtocupacion"
-        app:layout_constraintVertical_bias="0.98" />
+        app:layout_constraintVertical_bias="0.771" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
