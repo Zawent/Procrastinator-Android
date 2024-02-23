@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#67068F"
     tools:context=".RegistroActivity">
 
     <ImageView
@@ -21,14 +21,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="0dp"
-        android:layout_height="667dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="19dp"
+        android:layout_width="394dp"
+        android:layout_height="672dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/values"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
@@ -94,7 +95,8 @@
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="NOMBRE" />
+                android:text="NOMBRE"
+                android:textColor="#6C6C6C" />
 
             <EditText
                 android:id="@+id/editTextNombre"
@@ -111,7 +113,8 @@
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="FECHA DE NACIMIENTO" />
+                android:text="FECHA DE NACIMIENTO"
+                android:textColor="#FF6C6C6C" />
 
             <EditText
                 android:id="@+id/editTextEdad"
@@ -128,7 +131,8 @@
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="OCUPACIÓN" />
+                android:text="OCUPACIÓN"
+                android:textColor="#FF6C6C6C" />
 
             <EditText
                 android:id="@+id/editTextOcupacion"
@@ -145,7 +149,8 @@
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="EMAIL" />
+                android:text="EMAIL"
+                android:textColor="#FF6C6C6C" />
 
             <EditText
                 android:id="@+id/editTextEmail"
@@ -162,7 +167,8 @@
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CONTRASEÑA" />
+                android:text="CONTRASEÑA"
+                android:textColor="#FF6C6C6C" />
 
             <EditText
                 android:id="@+id/editTextContraseña"
@@ -179,14 +185,14 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="419dp"
-        android:layout_height="295dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="25dp"
+        android:layout_width="410dp"
+        android:layout_height="290dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="34dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.254"
         app:srcCompat="@drawable/perezoso" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

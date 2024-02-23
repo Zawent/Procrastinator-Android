@@ -4,20 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7B1FA2"
+    android:background="#722B8F"
     tools:context=".yalogueado.consejos.MenuConsejoActivity">
 
-    <ListView
-        android:id="@+id/listaConsejo"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/overlayLayout"
+        android:layout_width="433dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="63dp"
+        android:layout_marginBottom="4dp"
+        android:background="#5D0582"
+        android:orientation="horizontal"
+        android:paddingLeft="2sp"
+        android:paddingRight="2sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/listaConsejo">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="89dp"
+            android:layout_height="93dp"
+            android:layout_weight="1"
+            android:backgroundTint="#5D0582"
+            android:src="@drawable/candado__1_" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="89dp"
+            android:layout_height="93dp"
+            android:layout_weight="1"
+            android:backgroundTint="#451559"
+            android:onClick="irAPerfil"
+            android:src="@drawable/usuario__2_" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="89dp"
+            android:layout_height="93dp"
+            android:layout_weight="1"
+            android:backgroundTint="#5D0582"
+            android:src="@drawable/grafico__1_" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="89dp"
+            android:layout_height="93dp"
+            android:layout_weight="1"
+            android:backgroundTint="#451559"
+            android:onClick="irAConsejos"
+            android:src="@drawable/consejos__1_" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="89dp"
+            android:layout_height="93dp"
+            android:layout_weight="1"
+            android:backgroundTint="#5D0582"
+            android:src="@drawable/llave__1_" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listaConsejo"
+        android:layout_width="337dp"
+        android:layout_height="594dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="38dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.783" />
 
     <TextView
         android:id="@+id/textView11"
@@ -31,6 +90,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/numNivel"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,6 +108,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/listaConsejo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numNivel" />
 

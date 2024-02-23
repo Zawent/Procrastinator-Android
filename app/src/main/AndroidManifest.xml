@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Holamundo"
         tools:targetApi="31">
         <activity
+            android:name=".pantalla_lanzamiento"
+            android:exported="false" />
+        <activity
             android:name=".yalogueado.consejos.MenuConsejoActivity"
             android:exported="false" />
         <activity
