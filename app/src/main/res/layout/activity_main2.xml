@@ -33,13 +33,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="345dp"
-        android:layout_height="411dp"
+        android:layout_width="410dp"
+        android:layout_height="521dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="392dp"
+        android:layout_marginTop="396dp"
         android:layout_marginEnd="1dp"
         android:background="@drawable/values"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -47,28 +48,30 @@
             android:id="@+id/txtUser"
             android:layout_width="258dp"
             android:layout_height="61dp"
-            android:layout_marginTop="144dp"
+            android:paddingStart="16dp"
+            android:layout_marginTop="148dp"
             android:background="@drawable/redondosnputs"
             android:ems="10"
             android:hint="Usuario"
             android:inputType="text"
-            android:paddingStart="16dp"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintHorizontal_bias="0.427"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/txtPassword"
-            android:layout_width="260dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/redondosnputs"
+            android:layout_width="259dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="48dp"
             android:ems="10"
             android:hint="Contraseña"
             android:inputType="textPassword"
             android:paddingStart="16dp"
+            android:textColor="#000000"
+            android:textColorHighlight="#636363"
+            android:textColorHint="#636363"
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="@+id/txtUser"
             app:layout_constraintTop_toBottomOf="@+id/txtUser" />
@@ -77,11 +80,12 @@
             android:id="@+id/btnIngresar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="120dp"
-            android:layout_marginBottom="36dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginBottom="104dp"
             android:backgroundTint="@color/black"
             android:onClick="ingresar"
             android:text="Login"
+            android:textColor="#FFFFFF"
             android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -90,8 +94,8 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="120dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginStart="143dp"
+            android:layout_marginTop="59dp"
             android:text="LOGIN"
             android:textColor="#000000"
             android:textSize="34sp"
@@ -108,9 +112,10 @@
         android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.544"
+        app:layout_constraintVertical_bias="0.596"
         app:srcCompat="@drawable/logoeste" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -122,19 +127,5 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView6"
         app:layout_constraintGuide_begin="20dp"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="73dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="328dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,20 +24,21 @@
         android:layout_height="605dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/este"
+        app:layout_constraintVertical_bias="0.452"
         app:srcCompat="@drawable/procras"
-        tools:layout_editor_absoluteX="-8dp" />
+        tools:layout_editor_absoluteX="-13dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/este"
         android:layout_width="310dp"
         android:layout_height="218dp"
-        android:layout_marginStart="56dp"
+        android:layout_marginStart="43dp"
         android:layout_marginBottom="338dp"
         android:background="@drawable/cuadritoblanco"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -57,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#0072EC"
                 android:text="Facebook"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp" />
 
             <Button
@@ -65,6 +67,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#E31B1B"
                 android:text="Google"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp" />
 
             <Button
@@ -74,6 +77,7 @@
                 android:backgroundTint="#9636BF"
                 android:onClick="login"
                 android:text="Login"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp" />
 
         </LinearLayout>
@@ -159,6 +163,7 @@
         android:layout_width="254dp"
         android:layout_height="284dp"
         android:layout_marginTop="24dp"
+        android:layout_marginBottom="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"

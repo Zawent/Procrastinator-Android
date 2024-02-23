@@ -60,7 +60,7 @@ public class MenuInicioActivity extends AppCompatActivity {
     }
 
     public void irAPerfil(View view) {
-        startActivity(new Intent(MenuInicioActivity.this, Perfil.class));
+        startActivity(new Intent(this, Perfil.class));
     }
 
     public void irAConsejos(View view) {

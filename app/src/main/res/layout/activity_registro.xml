@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#67068F"
+    android:background="#FFFFFF"
     tools:context=".RegistroActivity">
 
     <ImageView
@@ -21,15 +21,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="394dp"
-        android:layout_height="672dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="40dp"
+        android:layout_width="0dp"
+        android:layout_height="667dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="19dp"
         android:background="@drawable/values"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
@@ -51,7 +50,8 @@
                 android:layout_height="74dp"
                 android:backgroundTint="@color/black"
                 android:onClick="guardarUser"
-                android:text="Registrar" />
+                android:text="Registrar"
+                android:textColor="#FFFFFF" />
 
 
             <Button
@@ -60,7 +60,8 @@
                 android:layout_height="73dp"
                 android:layout_marginLeft="50sp"
                 android:backgroundTint="@color/black"
-                android:text="Cancelar" />
+                android:text="Cancelar"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
 
         <TextView
@@ -71,6 +72,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="504dp"
             android:text="Registro de Usuario"
+            android:textColor="#000000"
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
@@ -95,8 +97,8 @@
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="NOMBRE"
-                android:textColor="#6C6C6C" />
+                android:textColor="#000000"
+                android:text="NOMBRE" />
 
             <EditText
                 android:id="@+id/editTextNombre"
@@ -105,6 +107,7 @@
                 android:layout_marginBottom="20sp"
                 android:background="@drawable/redondosnputs"
                 android:ems="10"
+                android:textColor="#000000"
                 android:inputType="text"
                 android:paddingStart="16dp"
                 android:textSize="25sp" />
@@ -113,8 +116,8 @@
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="FECHA DE NACIMIENTO"
-                android:textColor="#FF6C6C6C" />
+                android:textColor="#000000"
+                android:text="FECHA DE NACIMIENTO" />
 
             <EditText
                 android:id="@+id/editTextEdad"
@@ -123,6 +126,7 @@
                 android:layout_marginBottom="20sp"
                 android:background="@drawable/redondosnputs"
                 android:ems="10"
+                android:textColor="#000000"
                 android:inputType="date"
                 android:paddingStart="16dp"
                 android:textSize="25sp" />
@@ -130,14 +134,15 @@
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
+                android:textColor="#000000"
                 android:layout_height="wrap_content"
-                android:text="OCUPACIÓN"
-                android:textColor="#FF6C6C6C" />
+                android:text="OCUPACIÓN" />
 
             <EditText
                 android:id="@+id/editTextOcupacion"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:textColor="#000000"
                 android:layout_marginBottom="20sp"
                 android:background="@drawable/redondosnputs"
                 android:ems="10"
@@ -148,13 +153,14 @@
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
+                android:textColor="#000000"
                 android:layout_height="wrap_content"
-                android:text="EMAIL"
-                android:textColor="#FF6C6C6C" />
+                android:text="EMAIL" />
 
             <EditText
                 android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
+                android:textColor="#000000"
                 android:layout_height="50dp"
                 android:layout_marginBottom="20sp"
                 android:background="@drawable/redondosnputs"
@@ -166,14 +172,15 @@
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
+                android:textColor="#000000"
                 android:layout_height="wrap_content"
-                android:text="CONTRASEÑA"
-                android:textColor="#FF6C6C6C" />
+                android:text="CONTRASEÑA" />
 
             <EditText
                 android:id="@+id/editTextContraseña"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:textColor="#000000"
                 android:background="@drawable/redondosnputs"
                 android:ems="10"
                 android:inputType="textPassword"
@@ -185,14 +192,14 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="410dp"
-        android:layout_height="290dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="34dp"
+        android:layout_width="419dp"
+        android:layout_height="295dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.254"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/perezoso" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
