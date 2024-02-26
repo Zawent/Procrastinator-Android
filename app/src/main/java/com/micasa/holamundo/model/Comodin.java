@@ -4,7 +4,7 @@ import java.sql.Time;
 
 public class Comodin {
     private Long id;
-    private Time tiempo_generacion;
+    private String tiempo_generacion;
     private int id_user;
 
     @Override
@@ -24,11 +24,11 @@ public class Comodin {
         this.id = id;
     }
 
-    public Time getTiempo_generacion() {
+    public String getTiempo_generacion() {
         return tiempo_generacion;
     }
 
-    public void setTiempo_generacion(Time tiempo_generacion) {
+    public void setTiempo_generacion(String tiempo_generacion) {
         this.tiempo_generacion = tiempo_generacion;
     }
 
@@ -40,7 +40,7 @@ public class Comodin {
         this.id_user = id_user;
     }
 
-    public Comodin(Long id, Time tiempo_generacion, int id_user) {
+    public Comodin(Long id, String tiempo_generacion, int id_user) {
         this.id = id;
         this.tiempo_generacion = tiempo_generacion;
         this.id_user = id_user;

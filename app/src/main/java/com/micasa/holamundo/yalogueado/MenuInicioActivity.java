@@ -47,7 +47,7 @@ public class MenuInicioActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Consejo> call, Response<Consejo> response) {
                 consejoDiario.setText(""+response.body().getConsejo());
-                Log.i("consejo", response.body().getConsejo());
+                Log.i("consejo", String.valueOf(response.body()));
             }
 
             @Override

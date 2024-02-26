@@ -36,7 +36,7 @@ public class ComodinMain extends AppCompatActivity {
 
         comodinService.getComodines(DataInfo.respuestaLogin.getToken_type() + " " +
                         DataInfo.respuestaLogin.getAccess_token(),
-                1).enqueue(new Callback<List<Comodin>>() {
+                DataInfo.respuestaLogin.getUser().getId()).enqueue(new Callback<List<Comodin>>() {
             @Override
             public void onResponse(Call<List<Comodin>> call, Response<List<Comodin>> response) {
                 if (response.isSuccessful()){
