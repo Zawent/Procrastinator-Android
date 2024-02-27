@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.LocaleList;
 import android.provider.Settings;
 import android.util.Log;
 import android.util.SparseBooleanArray;
@@ -148,7 +149,7 @@ public class InicioBloqueo extends AppCompatActivity {
     private List<String> getInstalledApps(PackageManager packageManager) {
         List<ApplicationInfo> apps = packageManager.getInstalledApplications(0);
         List<String> packageNames = new ArrayList<>();
-        List<App> aplicaciones = new ArrayList<>();
+        /*List<App> aplicaciones = new ArrayList<>();
         serviceA.getAppsUser(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), DataInfo.respuestaLogin.getUser().getId()).enqueue(new Callback<List<App>>() {
             @Override
             public void onResponse(Call<List<App>> call, Response<List<App>> response) {
@@ -159,23 +160,25 @@ public class InicioBloqueo extends AppCompatActivity {
             public void onFailure(Call<List<App>> call, Throwable t) {
 
             }
-        });
+        });*/
 
         for (ApplicationInfo appInfo : apps) {
             packageNames.add(appInfo.packageName);
             Log.d("InicioBloqueo", "Package name es " + appInfo.packageName);
-            serviceA.crearApp(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), appInfo.packageName, DataInfo.respuestaLogin.getUser().getId()).enqueue(new Callback<App>() {
-                @Override
-                public void onResponse(Call<App> call, Response<App> response) {
-                    Log.i("Hola", String.valueOf(response));
-                }
-
-                @Override
-                public void onFailure(Call<App> call, Throwable t) {
-                    Log.e("Error", "Error al llamar al servicio", t);
-                }
-            });
         }
+        String nombres = String.join(";", packageNames);
+
+        serviceA.crearApp(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), nombres, DataInfo.respuestaLogin.getUser().getId()).enqueue(new Callback<App>() {
+            @Override
+            public void onResponse(Call<App> call, Response<App> response) {
+                Log.i("Hola", String.valueOf(response));
+            }
+
+            @Override
+            public void onFailure(Call<App> call, Throwable t) {
+                Log.e("Error", "Error al llamar al servicio", t);
+            }
+        });
         return packageNames;
     }
 
@@ -211,7 +214,9 @@ public class InicioBloqueo extends AppCompatActivity {
         Time horaBack = Time.valueOf(String.format("%02d:%02d:00", hours, minutes));
 
         if (NombreApp!=null) {
-            serviceB.crearBloqueo(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), LocalDateTime.now(), horaBack, estadoBlock, NombreApp.getId()).enqueue(new Callback<Bloqueo>() {
+            LocalDateTime time =  LocalDateTime.now();
+            Time tiempo =  Time.valueOf(String.format("%02d:%02d:00", time.getHour(), time.getMinute()));
+            serviceB.crearBloqueo(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), tiempo, horaBack, estadoBlock, NombreApp.getId()).enqueue(new Callback<Bloqueo>() {
                 @Override
                 public void onResponse(Call<Bloqueo> call, Response<Bloqueo> response) {
                     if (response.isSuccessful()) {
@@ -225,7 +230,7 @@ public class InicioBloqueo extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<Bloqueo> call, Throwable t) {
-
+                    Log.e("error", t.getMessage());
                 }
             });
         } else {
@@ -236,15 +241,17 @@ public class InicioBloqueo extends AppCompatActivity {
                 } else {
                     namesApps=app.getNombre();
                 }
-                serviceB.crearBloqueo(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), LocalDateTime.now(), horaBack, estadoBlock, app.getId()).enqueue(new Callback<Bloqueo>() {
+                LocalDateTime time =  LocalDateTime.now();
+                Time tiempo =  Time.valueOf(String.format("%02d:%02d:00", time.getHour(), time.getMinute()));
+                serviceB.crearBloqueo(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), tiempo, horaBack, estadoBlock, app.getId()).enqueue(new Callback<Bloqueo>() {
                     @Override
                     public void onResponse(Call<Bloqueo> call, Response<Bloqueo> response) {
-
+                        Log.i("error",response.body().toString());
                     }
 
                     @Override
                     public void onFailure(Call<Bloqueo> call, Throwable t) {
-
+                        Log.e("error", t.getMessage());
                     }
                 });
             }

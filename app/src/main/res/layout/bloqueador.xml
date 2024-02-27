@@ -5,42 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DF8321"
-    tools:context=".InicioBloqueo">
+    tools:context=".yalogueado.bloqueo.InicioBloqueo">
 
-
-    <Spinner
-        android:id="@+id/app_spinner"
-        android:layout_width="383dp"
-        android:layout_height="77dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="78dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/app_listview"
-        android:layout_width="393dp"
-        android:layout_height="0dp"
+        android:layout_width="390dp"
+        android:layout_height="155dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="9dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="9dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginBottom="11dp"
         android:backgroundTint="#EDB297"
         android:choiceMode="multipleChoice"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+    </ListView>
+
+    <Spinner
+        android:id="@+id/app_spinner"
+        android:layout_width="383dp"
+        android:layout_height="77sp"
+        android:dropDownHeight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout6"
-        android:layout_width="413dp"
-        android:layout_height="576dp"
-        android:layout_marginBottom="80dp"
+        android:layout_width="429dp"
+        android:layout_height="572dp"
+        android:layout_marginBottom="69dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,24 +48,22 @@
         <TextView
             android:id="@+id/active_block_textview"
             android:layout_width="242dp"
-            android:layout_height="55dp"
+            android:layout_height="0dp"
             android:layout_below="@id/block_button"
             android:text="Bloqueos activos:"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:layout_marginTop="10dp"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/active_blocks_display"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/block_button" />
 
         <TextView
             android:id="@+id/active_blocks_display"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="316dp"
+            android:layout_height="118dp"
             android:layout_below="@id/active_block_textview"
             android:layout_marginStart="56dp"
             android:layout_marginEnd="56dp"
@@ -76,7 +72,6 @@
             android:padding="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/active_block_textview" />
 
@@ -84,9 +79,9 @@
             android:id="@+id/botongeneral"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="9dp"
-            android:layout_marginEnd="27dp"
-            android:layout_marginBottom="38dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="40dp"
             android:backgroundTint="#8E6B60"
             android:text="Bloqueo General"
             android:textColor="#FFFFFF"
@@ -102,7 +97,7 @@
             android:layout_height="0dp"
             android:layout_marginStart="14dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="48dp"
+            android:layout_marginEnd="62dp"
             android:layout_marginBottom="40dp"
             android:backgroundTint="#7B1FA2"
             android:text="Bloqueo Especifico"
@@ -115,30 +110,30 @@
 
         <EditText
             android:id="@+id/minutes_edittext"
-            android:layout_width="169dp"
-            android:layout_height="73dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_below="@id/hours_edittext"
             android:layout_alignStart="@+id/hours_edittext"
             android:layout_alignEnd="@+id/hours_edittext"
             android:layout_marginEnd="24dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="397dp"
             android:background="@drawable/redondosnputs"
             android:hint="Minutos"
             android:inputType="number"
             android:padding="10dp"
             android:textColor="#000000"
             android:textColorHint="#656565"
-            app:layout_constraintBottom_toTopOf="@+id/block_button"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/hours_edittext"
+            app:layout_constraintTop_toBottomOf="@+id/botongeneral" />
 
         <EditText
             android:id="@+id/hours_edittext"
-            android:layout_width="169dp"
-            android:layout_height="73dp"
-            android:layout_below="@id/app_spinner"
-            android:layout_alignStart="@+id/app_spinner"
-            android:layout_alignEnd="@+id/app_spinner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginStart="24dp"
+            android:layout_marginEnd="45dp"
             android:layout_marginBottom="40dp"
             android:background="@drawable/redondosnputs"
             android:hint="Horas"
@@ -146,18 +141,25 @@
             android:padding="10dp"
             android:textColorHint="#656565"
             app:layout_constraintBottom_toTopOf="@+id/block_button"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/minutes_edittext"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/botonespecifico" />
 
         <Button
             android:id="@+id/block_button"
             android:layout_width="181dp"
-            android:layout_height="98dp"
+            android:layout_height="0dp"
             android:layout_below="@id/minutes_edittext"
+            android:layout_marginStart="73dp"
+            android:layout_marginEnd="73dp"
+            android:layout_marginBottom="10dp"
             android:backgroundTint="#D51515"
             android:text="Bloquear"
             android:textSize="24sp"
-            tools:layout_editor_absoluteX="116dp"
-            tools:layout_editor_absoluteY="239dp" />
+            app:layout_constraintBottom_toTopOf="@+id/active_block_textview"
+            app:layout_constraintEnd_toEndOf="@+id/botongeneral"
+            app:layout_constraintStart_toStartOf="@+id/active_blocks_display"
+            app:layout_constraintTop_toBottomOf="@+id/hours_edittext" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
