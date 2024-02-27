@@ -45,6 +45,12 @@
             android:name=".MainActivity2"
             android:exported="false" />
         <activity
+            android:name=".yalogueado.bloqueo.InicioBloqueo"
+            android:exported="true"/>
+        <activity
+            android:name=".yalogueado.bloqueo.BloqueoService"
+            android:exported="true"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

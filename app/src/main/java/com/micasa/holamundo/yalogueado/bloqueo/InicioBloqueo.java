@@ -74,21 +74,6 @@ public class InicioBloqueo extends AppCompatActivity {
         blockButton = findViewById(R.id.block_button);
         activeBlocksDisplay = findViewById(R.id.active_blocks_display);
 
-        installedApps = getInstalledApps();
-
-        serviceA.getApps(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token()).enqueue(new Callback<List<App>>() {
-            @Override
-            public void onResponse(Call<List<App>> call, Response<List<App>> response) {
-                if(response.isSuccessful()) {
-                    listarApps(response.body());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<App>> call, Throwable t) {
-
-            }
-        });
         ListView appListView = findViewById(R.id.app_listview);
 
         Button BloqueoE = findViewById(R.id.botonespecifico);
@@ -120,6 +105,27 @@ public class InicioBloqueo extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        PackageManager packageManager = getPackageManager();
+        installedApps = getInstalledApps(packageManager);
+
+        serviceA.getApps(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token()).enqueue(new Callback<List<App>>() {
+            @Override
+            public void onResponse(Call<List<App>> call, Response<List<App>> response) {
+                if(response.isSuccessful()) {
+                    listarApps(response.body());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<App>> call, Throwable t) {
+                Log.e("error", t.getMessage());
+            }
+        });
+    }
+
     public void listarApps (List<App> apps) {
         ArrayAdapter<App> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, apps);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -128,8 +134,6 @@ public class InicioBloqueo extends AppCompatActivity {
         final ArrayAdapter<App> listViewAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_multiple_choice, apps);
         ListView appListView = findViewById(R.id.app_listview);
         appListView.setAdapter(listViewAdapter);
-
-
 
 
         Button BloqueoG = findViewById(R.id.botongeneral);
@@ -141,10 +145,22 @@ public class InicioBloqueo extends AppCompatActivity {
         });
     }
 
-    private List<String> getInstalledApps() {
-        PackageManager packageManager = getPackageManager();
+    private List<String> getInstalledApps(PackageManager packageManager) {
         List<ApplicationInfo> apps = packageManager.getInstalledApplications(0);
         List<String> packageNames = new ArrayList<>();
+        List<App> aplicaciones = new ArrayList<>();
+        serviceA.getAppsUser(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), DataInfo.respuestaLogin.getUser().getId()).enqueue(new Callback<List<App>>() {
+            @Override
+            public void onResponse(Call<List<App>> call, Response<List<App>> response) {
+                //aplicaciones = response.body();
+            }
+
+            @Override
+            public void onFailure(Call<List<App>> call, Throwable t) {
+
+            }
+        });
+
         for (ApplicationInfo appInfo : apps) {
             packageNames.add(appInfo.packageName);
             Log.d("InicioBloqueo", "Package name es " + appInfo.packageName);
@@ -156,7 +172,7 @@ public class InicioBloqueo extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<App> call, Throwable t) {
-
+                    Log.e("Error", "Error al llamar al servicio", t);
                 }
             });
         }

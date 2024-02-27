@@ -27,6 +27,7 @@
             android:layout_height="125dp"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
+            android:onClick="irABloqueo"
             android:src="@drawable/cerrar__1___2_" />
 
         <ImageButton
