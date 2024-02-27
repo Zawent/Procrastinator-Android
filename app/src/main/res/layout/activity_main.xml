@@ -5,28 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="2sp"
-    android:background="#6C009A"
+    android:background="@drawable/procras"
     tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="437dp"
-        android:layout_height="605dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/este"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/procras"
-        tools:layout_editor_absoluteX="-13dp" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="437dp"
-        android:layout_height="605dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/este"
-        app:layout_constraintVertical_bias="0.452"
-        app:srcCompat="@drawable/procras"
-        tools:layout_editor_absoluteX="-13dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/este"

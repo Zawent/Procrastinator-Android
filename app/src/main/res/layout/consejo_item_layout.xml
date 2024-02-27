@@ -3,15 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="223dp">
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="300dp"
+    android:layout_marginTop="200dp"
+    android:background="@drawable/consejoforma">
 
     <TextView
         android:id="@+id/idDelConsejo"
         android:layout_width="50dp"
         android:layout_height="48dp"
         android:layout_marginStart="26dp"
-        android:layout_marginEnd="13dp"
         android:text="TextView"
+        android:textColor="#000000"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/contenidoConsejo"
@@ -26,6 +31,7 @@
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="33dp"
         android:text="TextView"
+        android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
