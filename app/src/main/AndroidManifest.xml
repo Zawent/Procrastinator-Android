@@ -20,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Holamundo"
         tools:targetApi="31">
+        <service android:name=".yalogueado.bloqueo.BloqueoService"
+            android:enabled="true"
+            android:exported="false"/>
         <activity
             android:name=".pantalla_lanzamiento"
             android:exported="false" />

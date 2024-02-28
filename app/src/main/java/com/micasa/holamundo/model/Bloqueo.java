@@ -6,11 +6,11 @@ import java.time.LocalDateTime;
 public class Bloqueo {
     private long id;
     private String hora_inicio;
-    private Time duracion;
+    private String duracion;
     private String estado;
     private long id_app;
 
-    public Bloqueo(long id, String hora_inicio, Time duracion, String estado, long id_app) {
+    public Bloqueo(long id, String hora_inicio, String duracion, String estado, long id_app) {
         this.id = id;
         this.hora_inicio = hora_inicio;
         this.duracion = duracion;
@@ -18,7 +18,7 @@ public class Bloqueo {
         this.id_app = id_app;
     }
 
-    public Bloqueo(String hora_inicio, Time duracion, String estado, long id_app) {
+    public Bloqueo(String hora_inicio, String duracion, String estado, long id_app) {
         this.hora_inicio = hora_inicio;
         this.duracion = duracion;
         this.estado = estado;
@@ -41,11 +41,11 @@ public class Bloqueo {
         this.hora_inicio = hora_inicio;
     }
 
-    public Time getDuracion() {
+    public String getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(Time duracion) {
+    public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
 

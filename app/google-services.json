@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "327118451867",
+    "project_id": "procras-d4d27",
+    "storage_bucket": "procras-d4d27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327118451867:android:471bf66377a29dc7f1c23e",
+        "android_client_info": {
+          "package_name": "com.micasa.holamundo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQh82bSEm1u41ibPfXDNCcbDCy2G6KDJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
