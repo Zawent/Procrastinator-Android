@@ -41,7 +41,8 @@ public class ComodinMain extends AppCompatActivity {
             public void onResponse(Call<List<Comodin>> call, Response<List<Comodin>> response) {
                 if (response.isSuccessful()){
                     List<Comodin> cantidadComodines = response.body();
-                    textViewCantComodin.setText("Cantidad de comodines: " + cantidadComodines);
+                    int cantidad =  cantidadComodines.size();
+                    textViewCantComodin.setText("Tus comodines: " + cantidad);
                 }else{
                     textViewCantComodin.setText("Error al obtener comodines");
                 }
