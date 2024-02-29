@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +21,9 @@ import com.micasa.holamundo.network.NivelAPICliente;
 import com.micasa.holamundo.network.NivelAPIService;
 import com.micasa.holamundo.network.UserAPICliente;
 import com.micasa.holamundo.network.UserAPIService;
+import com.micasa.holamundo.yalogueado.MenuInicioActivity;
+import com.micasa.holamundo.yalogueado.bloqueo.InicioBloqueo;
+import com.micasa.holamundo.yalogueado.consejos.MenuConsejoActivity;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -232,4 +236,19 @@ public class Perfil extends AppCompatActivity {
     }
 
 
+    public void irAConsejos(View view) {
+        startActivity(new Intent(Perfil.this, MenuConsejoActivity.class));
+    }
+
+    public void irABloqueo(View view) {
+        startActivity(new Intent(Perfil.this, InicioBloqueo.class));
+    }
+
+    public void irAMenuInicio(View view){
+        startActivity(new Intent(Perfil.this, MenuInicioActivity.class));
+    }
+
+    public void irAPerfil(View view) {
+        startActivity(new Intent(Perfil.this, Perfil.class));
+    }
 }

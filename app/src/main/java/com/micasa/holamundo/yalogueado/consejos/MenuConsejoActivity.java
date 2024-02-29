@@ -2,8 +2,10 @@ package com.micasa.holamundo.yalogueado.consejos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -13,6 +15,9 @@ import com.micasa.holamundo.adapter.ConsejoAdapter;
 import com.micasa.holamundo.model.Consejo;
 import com.micasa.holamundo.network.ConsejoAPICliente;
 import com.micasa.holamundo.network.ConsejoAPIService;
+import com.micasa.holamundo.yalogueado.MenuInicioActivity;
+import com.micasa.holamundo.yalogueado.bloqueo.InicioBloqueo;
+import com.micasa.holamundo.yalogueado.edituser.Perfil;
 
 import java.util.List;
 
@@ -64,4 +69,19 @@ public class MenuConsejoActivity extends AppCompatActivity {
         lista.setAdapter(datos);
     }
 
+    public void irABloqueo(View view) {
+        startActivity(new Intent(MenuConsejoActivity.this, InicioBloqueo.class));
+    }
+
+    public void irAMenuInicio(View view){
+        startActivity(new Intent(MenuConsejoActivity.this, MenuInicioActivity.class));
+    }
+
+    public void irAPerfil(View view) {
+        startActivity(new Intent(MenuConsejoActivity.this, Perfil.class));
+    }
+
+    public void irAConsejos(View view) {
+        startActivity(new Intent(MenuConsejoActivity.this, MenuConsejoActivity.class));
+    }
 }
