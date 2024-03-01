@@ -35,8 +35,7 @@ public class MenuInicioActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_inicio);
-        Intent intent = getIntent();
-        user = (User) intent.getSerializableExtra("user");
+        user = DataInfo.respuestaLogin.getUser();
         serviceC = ConsejoAPICliente.getConsejoService();
         overlayLayout = findViewById(R.id.overlayLayout);
         overlayLayout.setVisibility(View.VISIBLE);
@@ -61,7 +60,7 @@ public class MenuInicioActivity extends AppCompatActivity {
     }
 
     public void irAPerfil(View view) {
-        startActivity(new Intent(this, Perfil.class));
+        startActivity(new Intent(MenuInicioActivity.this, Perfil.class));
     }
 
     public void irAConsejos(View view) {

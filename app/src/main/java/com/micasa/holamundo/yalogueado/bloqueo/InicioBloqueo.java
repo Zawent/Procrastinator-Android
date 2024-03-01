@@ -32,6 +32,9 @@ import com.micasa.holamundo.network.AppAPICliente;
 import com.micasa.holamundo.network.AppAPIService;
 import com.micasa.holamundo.network.BloqueoAPICliente;
 import com.micasa.holamundo.network.BloqueoAPIService;
+import com.micasa.holamundo.yalogueado.MenuInicioActivity;
+import com.micasa.holamundo.yalogueado.consejos.MenuConsejoActivity;
+import com.micasa.holamundo.yalogueado.edituser.Perfil;
 
 import java.sql.Time;
 import java.time.LocalDateTime;
@@ -298,5 +301,17 @@ public class InicioBloqueo extends AppCompatActivity {
         if (receiver != null) {
             LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
         }
+    }
+
+    public void irAPerfil(View view) {
+        startActivity(new Intent(InicioBloqueo.this, Perfil.class));
+    }
+
+    public void irAConsejos(View view) {
+        startActivity(new Intent(InicioBloqueo.this, MenuConsejoActivity.class));
+    }
+
+    public void irAMenuInicio(View view){
+        startActivity(new Intent(InicioBloqueo.this, MenuInicioActivity.class));
     }
 }

@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="756dp"
         android:backgroundTint="#9636BF"
-        android:onClick="irABloqueo"
+        android:onClick="irAMenuInicio"
         android:text="Pantalla inicio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

@@ -1,26 +1,36 @@
 {
   "project_info": {
-    "project_number": "327118451867",
-    "project_id": "procras-d4d27",
-    "storage_bucket": "procras-d4d27.appspot.com"
+    "project_number": "417955814819",
+    "project_id": "procras-415622",
+    "storage_bucket": "procras-415622.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:327118451867:android:471bf66377a29dc7f1c23e",
+        "mobilesdk_app_id": "1:417955814819:android:37f35a5117457edef64e16",
         "android_client_info": {
           "package_name": "com.micasa.holamundo"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "417955814819-lmtub30ercnrq278u76p6854l0f027t5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyBQh82bSEm1u41ibPfXDNCcbDCy2G6KDJ4"
+          "current_key": "AIzaSyB6lywKurgg1reAOrwFde8cKaxO-mqLKgE"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "417955814819-lmtub30ercnrq278u76p6854l0f027t5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
