@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
-        tools:ignore="ProtectedPermissions" />
 
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission
+        android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -20,9 +22,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Holamundo"
         tools:targetApi="31">
-        <service android:name=".yalogueado.bloqueo.BloqueoService"
+        <activity
+            android:name=".yalogueado.comodin.ComodinActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".yalogueado.bloqueo.BloqueoService"
             android:enabled="true"
-            android:exported="false"/>
+            android:exported="false" />
+
         <activity
             android:name=".pantalla_lanzamiento"
             android:exported="false" />
@@ -52,10 +60,10 @@
             android:exported="false" />
         <activity
             android:name=".yalogueado.bloqueo.InicioBloqueo"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".yalogueado.bloqueo.BloqueoService"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

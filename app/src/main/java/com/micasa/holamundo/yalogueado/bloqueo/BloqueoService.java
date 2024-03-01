@@ -119,6 +119,9 @@ public class BloqueoService extends Service {
         Toast.makeText(this, "La aplicación " + NombreApp + " se ha bloqueado.", Toast.LENGTH_SHORT).show();
     }
 
+
+
+
     private void desbloquearApp() {
         if (windowManager != null && bloqueadoView != null) {
             windowManager.removeView(bloqueadoView);
