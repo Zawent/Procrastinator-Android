@@ -14,6 +14,9 @@ import android.widget.TextView;
 import com.micasa.holamundo.model.User;
 import com.micasa.holamundo.network.LoginAPICliente;
 import com.micasa.holamundo.network.LoginAPIService;
+import com.micasa.holamundo.yalogueado.MenuInicioActivity;
+import com.micasa.holamundo.yalogueado.consejos.MenuConsejoActivity;
+import com.micasa.holamundo.yalogueado.edituser.Perfil;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -65,13 +68,9 @@ public class FinEncuestaActivity extends AppCompatActivity {
         nivel.setText(""+user.getNivel_id());
     }
 
-    public void irABloqueo(View view) {
-        Intent intent = new Intent(this, BloqueoActivity.class);
-        startActivity(intent);
+    public void irAMenuInicio(View view){
+        startActivity(new Intent(FinEncuestaActivity.this, MenuInicioActivity.class));
     }
 
-    public void irAEditar () {
-    
-    }
 
 }

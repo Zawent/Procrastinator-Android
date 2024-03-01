@@ -81,7 +81,4 @@ public class MenuConsejoActivity extends AppCompatActivity {
         startActivity(new Intent(MenuConsejoActivity.this, Perfil.class));
     }
 
-    public void irAConsejos(View view) {
-        startActivity(new Intent(MenuConsejoActivity.this, MenuConsejoActivity.class));
-    }
 }

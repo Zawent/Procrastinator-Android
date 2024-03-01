@@ -314,8 +314,4 @@ public class InicioBloqueo extends AppCompatActivity {
     public void irAMenuInicio(View view){
         startActivity(new Intent(InicioBloqueo.this, MenuInicioActivity.class));
     }
-
-    public void irABloqueo(View view) {
-        startActivity(new Intent(InicioBloqueo.this, InicioBloqueo.class));
-    }
 }

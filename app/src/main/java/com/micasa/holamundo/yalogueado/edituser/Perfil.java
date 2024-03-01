@@ -248,7 +248,4 @@ public class Perfil extends AppCompatActivity {
         startActivity(new Intent(Perfil.this, MenuInicioActivity.class));
     }
 
-    public void irAPerfil(View view) {
-        startActivity(new Intent(Perfil.this, Perfil.class));
-    }
 }
