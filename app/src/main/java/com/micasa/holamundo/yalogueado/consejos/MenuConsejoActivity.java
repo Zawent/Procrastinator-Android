@@ -75,11 +75,6 @@ public class MenuConsejoActivity extends AppCompatActivity {
     public void irAConsejos(View view) {
         startActivity(new Intent(this, MenuConsejoActivity.class));
     }
-
-    public void irABloqueo(View view) {
-        startActivity((new Intent(this, InicioBloqueo.class)));
-    }
-
     public void irABloqueo(View view) {
         startActivity(new Intent(MenuConsejoActivity.this, InicioBloqueo.class));
     }
@@ -87,9 +82,4 @@ public class MenuConsejoActivity extends AppCompatActivity {
     public void irAMenuInicio(View view){
         startActivity(new Intent(MenuConsejoActivity.this, MenuInicioActivity.class));
     }
-
-    public void irAPerfil(View view) {
-        startActivity(new Intent(MenuConsejoActivity.this, Perfil.class));
-    }
-
 }
