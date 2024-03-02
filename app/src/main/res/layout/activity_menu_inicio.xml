@@ -60,6 +60,7 @@
             android:layout_height="93dp"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
+            android:onClick="irAComodin"
             android:src="@drawable/llave__1_" />
 
     </LinearLayout>

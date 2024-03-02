@@ -23,16 +23,7 @@
         android:theme="@style/Theme.Holamundo"
         tools:targetApi="31">
         <activity
-            android:name=".yalogueado.comodin.ComodinActivity"
-            android:exported="false" />
-
-        <service
-            android:name=".yalogueado.bloqueo.BloqueoService"
-            android:enabled="true"
-            android:exported="false" />
-
-        <activity
-            android:name=".pantalla_lanzamiento"
+            android:name=".comodin.ComodinMain"
             android:exported="false" />
         <activity
             android:name=".yalogueado.consejos.MenuConsejoActivity"

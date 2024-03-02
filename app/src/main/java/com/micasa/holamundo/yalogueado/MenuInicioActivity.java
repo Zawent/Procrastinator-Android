@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.micasa.holamundo.DataInfo;
 import com.micasa.holamundo.R;
+import com.micasa.holamundo.comodin.ComodinMain;
 import com.micasa.holamundo.model.Consejo;
 import com.micasa.holamundo.network.ConsejoAPICliente;
 import com.micasa.holamundo.network.ConsejoAPIService;
@@ -70,6 +71,10 @@ public class MenuInicioActivity extends AppCompatActivity {
     public void irABloqueo(View view) {
         startActivity((new Intent(MenuInicioActivity.this, InicioBloqueo.class)));
     }
+    public void irAComodin (View view) {
+        startActivity(new Intent(MenuInicioActivity.this, ComodinMain.class));
+    }
+
 
 
 }
