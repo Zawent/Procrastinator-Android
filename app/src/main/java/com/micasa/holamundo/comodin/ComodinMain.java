@@ -31,7 +31,7 @@ public class ComodinMain extends AppCompatActivity {
         setContentView(R.layout.activity_comodin_main);
         Intent intent = getIntent();
         user = (User) intent.getSerializableExtra("user");
-        comodinService = ComodinAPICliente.getCantidadComodin();
+        comodinService = ComodinAPICliente.getComodinService();
         textViewCantComodin = findViewById(R.id.textViewCantComodin);
 
         comodinService.getComodines(DataInfo.respuestaLogin.getToken_type() + " " +
@@ -42,9 +42,9 @@ public class ComodinMain extends AppCompatActivity {
                 if (response.isSuccessful()){
                     List<Comodin> cantidadComodines = response.body();
                     int cantidad =  cantidadComodines.size();
-                    textViewCantComodin.setText("Tus comodines: " + cantidad);
+                    textViewCantComodin.setText("" + cantidad);
                 }else{
-                    textViewCantComodin.setText("Error al obtener comodines");
+                    textViewCantComodin.setText("0");
                 }
 
             }

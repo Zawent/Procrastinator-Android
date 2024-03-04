@@ -139,7 +139,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="48dp"
+            android:layout_marginEnd="41dp"
             android:layout_marginBottom="40dp"
             android:backgroundTint="#8E6B60"
             android:text="Bloqueo General"
@@ -148,7 +148,8 @@
             app:layout_constraintBottom_toTopOf="@+id/minutes_edittext"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/botonespecifico"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/botonespecifico"
@@ -156,7 +157,7 @@
             android:layout_height="0dp"
             android:layout_marginStart="14dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="62dp"
+            android:layout_marginEnd="61dp"
             android:layout_marginBottom="40dp"
             android:backgroundTint="#7B1FA2"
             android:text="Bloqueo Especifico"
@@ -169,13 +170,12 @@
 
         <EditText
             android:id="@+id/minutes_edittext"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="171dp"
+            android:layout_height="78dp"
             android:layout_below="@id/hours_edittext"
             android:layout_alignStart="@+id/hours_edittext"
             android:layout_alignEnd="@+id/hours_edittext"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="397dp"
+            android:layout_marginBottom="360dp"
             android:background="@drawable/redondosnputs"
             android:hint="Minutos"
             android:inputType="number"
@@ -184,8 +184,10 @@
             android:textColorHint="#656565"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/hours_edittext"
-            app:layout_constraintTop_toBottomOf="@+id/botongeneral" />
+            app:layout_constraintHorizontal_bias="0.883"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/hours_edittext"
+            app:layout_constraintVertical_bias="1.0" />
 
         <EditText
             android:id="@+id/hours_edittext"
