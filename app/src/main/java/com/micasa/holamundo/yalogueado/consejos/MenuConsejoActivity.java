@@ -17,6 +17,7 @@ import com.micasa.holamundo.network.ConsejoAPICliente;
 import com.micasa.holamundo.network.ConsejoAPIService;
 import com.micasa.holamundo.yalogueado.MenuInicioActivity;
 import com.micasa.holamundo.yalogueado.bloqueo.InicioBloqueo;
+import com.micasa.holamundo.yalogueado.comodin.comodin;
 import com.micasa.holamundo.yalogueado.edituser.Perfil;
 
 import java.util.List;
@@ -72,14 +73,15 @@ public class MenuConsejoActivity extends AppCompatActivity {
         startActivity(new Intent(this, Perfil.class));
     }
 
-    public void irAConsejos(View view) {
-        startActivity(new Intent(this, MenuConsejoActivity.class));
-    }
     public void irABloqueo(View view) {
         startActivity(new Intent(MenuConsejoActivity.this, InicioBloqueo.class));
     }
 
     public void irAMenuInicio(View view){
         startActivity(new Intent(MenuConsejoActivity.this, MenuInicioActivity.class));
+    }
+
+    public void irAComodin(View view) {
+        startActivity((new Intent(MenuConsejoActivity.this, comodin.class)));
     }
 }

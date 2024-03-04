@@ -1,8 +1,7 @@
 package com.micasa.holamundo.model;
 
-import java.sql.Time;
-
 public class Comodin {
+
     private Long id;
     private String tiempo_generacion;
     private int id_user;
@@ -46,3 +45,4 @@ public class Comodin {
         this.id_user = id_user;
     }
 }
+

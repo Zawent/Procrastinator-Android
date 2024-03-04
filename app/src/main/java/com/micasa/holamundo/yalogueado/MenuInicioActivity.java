@@ -11,11 +11,12 @@ import android.widget.TextView;
 
 import com.micasa.holamundo.DataInfo;
 import com.micasa.holamundo.R;
-import com.micasa.holamundo.comodin.ComodinMain;
+import com.micasa.holamundo.model.Comodin;
 import com.micasa.holamundo.model.Consejo;
 import com.micasa.holamundo.network.ConsejoAPICliente;
 import com.micasa.holamundo.network.ConsejoAPIService;
 import com.micasa.holamundo.yalogueado.bloqueo.InicioBloqueo;
+import com.micasa.holamundo.yalogueado.comodin.comodin;
 import com.micasa.holamundo.yalogueado.consejos.MenuConsejoActivity;
 import com.micasa.holamundo.yalogueado.edituser.Perfil;
 import com.micasa.holamundo.model.User;
@@ -43,7 +44,8 @@ public class MenuInicioActivity extends AppCompatActivity {
         si = findViewById(R.id.BvNombre);
         si.setText(user.getName());
         consejoDiario = findViewById(R.id.consejoDia);
-        serviceC.getConsejo(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(),user.getNivel_id()).enqueue(new Callback<Consejo>() {
+        serviceC.getConsejo(DataInfo.respuestaLogin.getToken_type()+" " +
+                DataInfo.respuestaLogin.getAccess_token(),user.getNivel_id()).enqueue(new Callback<Consejo>() {
             @Override
             public void onResponse(Call<Consejo> call, Response<Consejo> response) {
                 consejoDiario.setText(""+response.body().getConsejo());
@@ -71,10 +73,9 @@ public class MenuInicioActivity extends AppCompatActivity {
     public void irABloqueo(View view) {
         startActivity((new Intent(MenuInicioActivity.this, InicioBloqueo.class)));
     }
-    public void irAComodin (View view) {
-        startActivity(new Intent(MenuInicioActivity.this, ComodinMain.class));
+
+    public void irAComodin(View view) {
+        startActivity((new Intent(MenuInicioActivity.this, comodin.class)));
     }
-
-
 
 }

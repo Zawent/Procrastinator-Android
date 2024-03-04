@@ -33,6 +33,7 @@ import com.micasa.holamundo.network.AppAPIService;
 import com.micasa.holamundo.network.BloqueoAPICliente;
 import com.micasa.holamundo.network.BloqueoAPIService;
 import com.micasa.holamundo.yalogueado.MenuInicioActivity;
+import com.micasa.holamundo.yalogueado.comodin.comodin;
 import com.micasa.holamundo.yalogueado.consejos.MenuConsejoActivity;
 import com.micasa.holamundo.yalogueado.edituser.Perfil;
 
@@ -101,6 +102,8 @@ public class InicioBloqueo extends AppCompatActivity {
                 if (intent.getAction().equals("BLOQUEOS_ACTIVOS")) {
                     String bloquesActivos = intent.getStringExtra("bloques_activos");
                     activeBlocksDisplay.setText("Bloqueos activos: " + bloquesActivos);
+                }else{
+                    activeBlocksDisplay.setText("no hay bloqueos activos");
                 }
             }
         };
@@ -313,5 +316,9 @@ public class InicioBloqueo extends AppCompatActivity {
 
     public void irAMenuInicio(View view){
         startActivity(new Intent(InicioBloqueo.this, MenuInicioActivity.class));
+    }
+
+    public void irAComodin(View view) {
+        startActivity((new Intent(InicioBloqueo.this, comodin.class)));
     }
 }

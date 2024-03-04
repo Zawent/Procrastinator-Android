@@ -23,6 +23,7 @@ import com.micasa.holamundo.network.UserAPICliente;
 import com.micasa.holamundo.network.UserAPIService;
 import com.micasa.holamundo.yalogueado.MenuInicioActivity;
 import com.micasa.holamundo.yalogueado.bloqueo.InicioBloqueo;
+import com.micasa.holamundo.yalogueado.comodin.comodin;
 import com.micasa.holamundo.yalogueado.consejos.MenuConsejoActivity;
 
 import java.util.regex.Matcher;
@@ -248,4 +249,7 @@ public class Perfil extends AppCompatActivity {
         startActivity(new Intent(Perfil.this, MenuInicioActivity.class));
     }
 
+    public void irAComodin(View view) {
+        startActivity((new Intent(Perfil.this, comodin.class)));
+    }
 }
