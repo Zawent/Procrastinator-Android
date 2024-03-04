@@ -7,21 +7,23 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ComodinAPICliente {
 
-    private static final String URL = "http://10.201.194.108:8000/api/";
+    private static final String URL = "http://10.201.194.45:8000/api/";
     private static ComodinAPIService instance;
 
-    public static ComodinAPIService getComodinService() {
-        if (instance==null) {
+    public static ComodinAPIService getCantidadComodin() {
+        if (instance == null) {
             final HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 
             final OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
             httpClient.addInterceptor(logging);
 
-            Retrofit http = new Retrofit.Builder().baseUrl(URL).addConverterFactory(GsonConverterFactory.create()).client(httpClient.build()).build();
-
-            //Retrofit http = new Retrofit.Builder().baseUrl(URL).addConverterFactory(GsonConverterFactory.create()).build();
-            instance = http.create(ComodinAPIService.class);
+            Retrofit retro = new Retrofit.Builder()
+                    .baseUrl(URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(httpClient.build())
+                    .build();
+            instance = retro.create(ComodinAPIService.class);
         }
         return instance;
     }
