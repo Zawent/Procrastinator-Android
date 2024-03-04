@@ -31,7 +31,7 @@ public class ComodinMain extends AppCompatActivity {
         setContentView(R.layout.activity_comodin_main);
         Intent intent = getIntent();
         user = (User) intent.getSerializableExtra("user");
-        comodinService = ComodinAPICliente.getComodinService();
+        comodinService = ComodinAPICliente.getCantidadComodin();
         textViewCantComodin = findViewById(R.id.textViewCantComodin);
 
         comodinService.getComodines(DataInfo.respuestaLogin.getToken_type() + " " +
