@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ComodinAPICliente {
 
-    private static final String URL = "http://10.201.194.45:8000/api/";
+    private static final String URL = "http://10.201.194.108:8000/api/";
     private static ComodinAPIService instance;
 
     public static ComodinAPIService getCantidadComodin() {
