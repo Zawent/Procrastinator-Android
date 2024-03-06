@@ -28,6 +28,7 @@ import com.micasa.holamundo.DataInfo;
 import com.micasa.holamundo.R;
 import com.micasa.holamundo.model.App;
 import com.micasa.holamundo.model.Bloqueo;
+import com.micasa.holamundo.model.User;
 import com.micasa.holamundo.network.AppAPICliente;
 import com.micasa.holamundo.network.AppAPIService;
 import com.micasa.holamundo.network.BloqueoAPICliente;
@@ -66,6 +67,7 @@ public class InicioBloqueo extends AppCompatActivity {
         setContentView(R.layout.bloqueador);
         serviceB = BloqueoAPICliente.getBloqueoService();
         serviceA = AppAPICliente.getAppService();
+        User user = DataInfo.respuestaLogin.getUser();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {
             Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
@@ -321,4 +323,6 @@ public class InicioBloqueo extends AppCompatActivity {
     public void irAComodin(View view) {
         startActivity((new Intent(InicioBloqueo.this, comodin.class)));
     }
+
+
 }

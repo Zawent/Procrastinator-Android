@@ -7,6 +7,7 @@ import android.os.CountDownTimer;
 import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.Toast;
 import android.content.Context;
 import android.graphics.PixelFormat;
@@ -19,7 +20,17 @@ import java.util.TimerTask;
 import android.os.Handler;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.micasa.holamundo.DataInfo;
 import com.micasa.holamundo.R;
+import com.micasa.holamundo.model.Bloqueo;
+import com.micasa.holamundo.model.User;
+import com.micasa.holamundo.network.BloqueoAPICliente;
+import com.micasa.holamundo.network.BloqueoAPIService;
+import com.micasa.holamundo.network.ComodinAPIService;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class BloqueoService extends Service {
@@ -34,11 +45,22 @@ public class BloqueoService extends Service {
     private Timer timer;
     private CountDownTimer countDownTimer;
 
+    private BloqueoAPIService service;
+    private ComodinAPIService serviceC;
+
+    private Button comodinButton;
+
+    private Bloqueo bloqueo;
+
+
+
+    User user = DataInfo.respuestaLogin.getUser();
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d("Bloquiado", "Servicio de bloqueo iniciado");
         if (intent != null) {
+            service = BloqueoAPICliente.getBloqueoService();
             NombreApp = intent.getStringExtra("NombreApp");
             Log.d("Bloquiado", "AAAp " + NombreApp );
             TiempoSegundos = intent.getIntExtra("TiempoEnSegundos", 0);
@@ -50,7 +72,18 @@ public class BloqueoService extends Service {
                 @Override
                 public void run() {
                     Log.d("Bloquiado", "SE DESBLOQUEO " + NombreApp );
-                    desbloquearApp();
+
+                    service.desactivar(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), DataInfo.respuestaLogin.getUser().getId()).enqueue(new Callback<Bloqueo>() {
+                        @Override
+                        public void onResponse(Call<Bloqueo> call, Response<Bloqueo> response) {
+                            Log.i("info", response.body().toString());
+                        }
+
+                        @Override
+                        public void onFailure(Call<Bloqueo> call, Throwable t) {
+                            Log.e("error", t.getMessage());
+                        }
+                    });
                 }
             }, TiempoSegundos * 1000);
             isRunning = true;
@@ -93,7 +126,43 @@ public class BloqueoService extends Service {
     }
 
     private void bloquearApp() {
+
         bloqueadoView = LayoutInflater.from(this).inflate(R.layout.bloqueado, null);
+
+        Button btnBlouqeo=bloqueadoView.findViewById(R.id.usar_comdin);
+        btnBlouqeo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(BloqueoService.this, "OK", Toast.LENGTH_SHORT).show();
+                service.tenerBloqueo(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token()).enqueue(new Callback<Bloqueo>() {
+                    @Override
+                    public void onResponse(Call<Bloqueo> call, Response<Bloqueo> response) {
+                        bloqueo = response.body();
+                        service.comodin(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), bloqueo.getId(), DataInfo.respuestaLogin.getUser().getId(),"0").enqueue(new Callback<Bloqueo>() {
+                            @Override
+                            public void onResponse(Call<Bloqueo> call, Response<Bloqueo> response) {
+                                Log.i("si", response.body().toString());
+                                //if (response.body()!=null){
+                                    desbloquearApp();
+                                //}
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<Bloqueo> call, Throwable t) {
+                                Log.e("error comodin", t.getMessage());
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onFailure(Call<Bloqueo> call, Throwable t) {
+                        Log.e("Error Bloqueo", t.getMessage() );
+                    }
+                });
+            }
+        });
+
         WindowManager.LayoutParams params;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             params = new WindowManager.LayoutParams(
@@ -120,8 +189,10 @@ public class BloqueoService extends Service {
     }
  
     private void desbloquearApp() {
+        countDownTimer.cancel();
         if (windowManager != null && bloqueadoView != null) {
             windowManager.removeView(bloqueadoView);
+
             new Handler(Looper.getMainLooper()).post(new Runnable() {
                 @Override
                 public void run() {
@@ -129,6 +200,9 @@ public class BloqueoService extends Service {
                 }
             });
         }
+
+
+
     }
 }
 
