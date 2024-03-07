@@ -13,6 +13,7 @@ import com.micasa.holamundo.model.RespuestaLogin;
 import com.micasa.holamundo.network.LoginAPICliente;
 import com.micasa.holamundo.network.LoginAPIService;
 import com.micasa.holamundo.yalogueado.MenuInicioActivity;
+import com.micasa.holamundo.yalogueado.bloqueo.InicioBloqueo;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -63,6 +64,8 @@ public class  MainActivity2 extends AppCompatActivity {
             }
         });
 
-
+    }
+    public void irAprincipal(View view) {
+        startActivity((new Intent(MainActivity2.this, MainActivity.class)));
     }
 }

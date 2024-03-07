@@ -133,7 +133,6 @@ public class BloqueoService extends Service {
         btnBlouqeo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(BloqueoService.this, "OK", Toast.LENGTH_SHORT).show();
                 service.tenerBloqueo(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token()).enqueue(new Callback<Bloqueo>() {
                     @Override
                     public void onResponse(Call<Bloqueo> call, Response<Bloqueo> response) {
@@ -151,6 +150,7 @@ public class BloqueoService extends Service {
                             @Override
                             public void onFailure(Call<Bloqueo> call, Throwable t) {
                                 Log.e("error comodin", t.getMessage());
+                                Toast.makeText(BloqueoService.this, "No tiene comodines disponibles", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }

@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.micasa.holamundo.DataInfo;
 import com.micasa.holamundo.R;
 import com.micasa.holamundo.model.Comodin;
 import com.micasa.holamundo.model.Consejo;
+import com.micasa.holamundo.network.BloqueoAPIService;
 import com.micasa.holamundo.network.ConsejoAPICliente;
 import com.micasa.holamundo.network.ConsejoAPIService;
 import com.micasa.holamundo.yalogueado.bloqueo.InicioBloqueo;
@@ -32,6 +34,9 @@ public class MenuInicioActivity extends AppCompatActivity {
     TextView consejoDiario;
     private LinearLayout overlayLayout;
     private ConsejoAPIService serviceC;
+
+    private BloqueoAPIService serviceB;
+    ListView lista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +63,8 @@ public class MenuInicioActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
+
 
     public void irAPerfil(View view) {
         startActivity(new Intent(MenuInicioActivity.this, Perfil.class));

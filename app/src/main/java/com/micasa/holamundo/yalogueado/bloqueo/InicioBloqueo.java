@@ -40,6 +40,8 @@ import com.micasa.holamundo.yalogueado.edituser.Perfil;
 
 import java.sql.Time;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -223,7 +225,9 @@ public class InicioBloqueo extends AppCompatActivity {
 
         if (NombreApp!=null) {
             LocalDateTime time =  LocalDateTime.now();
-            Time tiempo =  Time.valueOf(String.format("%02d:%02d:00", time.getHour(), time.getMinute()));
+            ZoneId zoneId = ZoneId.of("-05:00"); // Zona horaria -5
+            ZonedDateTime zonedDateTime = time.atZone(zoneId);
+            Time tiempo = Time.valueOf(String.format("%02d:%02d:00", zonedDateTime.getHour(), zonedDateTime.getMinute()));
             serviceB.crearBloqueo(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), tiempo, horaBack, estadoBlock, NombreApp.getId()).enqueue(new Callback<Bloqueo>() {
                 @Override
                 public void onResponse(Call<Bloqueo> call, Response<Bloqueo> response) {

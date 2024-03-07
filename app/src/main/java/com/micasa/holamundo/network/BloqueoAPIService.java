@@ -31,4 +31,7 @@ public interface BloqueoAPIService {
     @FormUrlEncoded
     @PATCH("desactivar-bloqueo/{id}")
     Call<Bloqueo> comodin(@Header("Authorization") String authorization,@Path("id") long id , @Field("id_user") long id_user, @Field("duracion") String duracion);
+
+    @GET("bloqueados/topsApps")
+    Call<Bloqueo> ListaTopApps(@Header("Authorization") String authorization);
 }

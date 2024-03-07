@@ -60,6 +60,7 @@
                 android:layout_height="73dp"
                 android:layout_marginLeft="50sp"
                 android:backgroundTint="@color/black"
+                android:onClick="irAprincipal"
                 android:text="Cancelar"
                 android:textColor="#FFFFFF" />
         </LinearLayout>

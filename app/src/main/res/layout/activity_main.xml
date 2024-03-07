@@ -10,37 +10,27 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/este"
-        android:layout_width="310dp"
-        android:layout_height="218dp"
-        android:layout_marginStart="43dp"
+        android:layout_width="316dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="52dp"
         android:layout_marginBottom="338dp"
         android:background="@drawable/cuadritoblanco"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.869">
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="173dp"
-            android:layout_height="181dp"
+            android:layout_width="211dp"
+            android:layout_height="116dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.232"
+            app:layout_constraintHorizontal_bias="0.238"
             app:layout_constraintStart_toEndOf="@+id/linearLayout2"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.864">
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#0072EC"
-                android:onClick="google"
-                android:text="Facebook"
-                android:textColor="#FFFFFF"
-                android:textSize="25sp" />
+            app:layout_constraintVertical_bias="0.516">
 
             <Button
                 android:id="@+id/btnGoogle"
@@ -58,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#9636BF"
                 android:onClick="login"
-                android:text="Login"
+                android:text="Iniciar sesión"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp" />
 
@@ -66,25 +56,15 @@
 
         <LinearLayout
             android:id="@+id/linearLayout2"
-            android:layout_width="66dp"
-            android:layout_height="174dp"
-            android:layout_marginStart="28dp"
+            android:layout_width="68dp"
+            android:layout_height="114dp"
+            android:layout_marginStart="16dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.704">
+            app:layout_constraintVertical_bias="0.432">
 
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:padding="5dp"
-                app:shapeAppearanceOverlay="@style/radius"
-                app:srcCompat="@drawable/logo_de_facebook"
-                app:strokeColor="#CA4E4E"
-                app:strokeWidth="2sp" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageView2"
@@ -142,13 +122,13 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="254dp"
-        android:layout_height="284dp"
+        android:layout_width="302dp"
+        android:layout_height="314dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="1dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logoeste" />

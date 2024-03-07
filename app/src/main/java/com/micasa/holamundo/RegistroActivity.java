@@ -79,10 +79,9 @@ public class RegistroActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
     }
 
+    public void irAprincipal(View view) {
+        startActivity((new Intent(RegistroActivity.this, MainActivity.class)));
+    }
 }
