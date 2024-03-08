@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -36,25 +37,37 @@ public class comodin extends AppCompatActivity {
         user = DataInfo.respuestaLogin.getUser();
         comodinService = ComodinAPICliente.getCantidadComodin();
         textViewCantComodin = findViewById(R.id.cantComodin);
-
         comodinService.getComodines(DataInfo.respuestaLogin.getToken_type() + " " +
-                        DataInfo.respuestaLogin.getAccess_token(),
-                DataInfo.respuestaLogin.getUser().getId()).enqueue(new Callback<List<Comodin>>() {
+                DataInfo.respuestaLogin.getAccess_token()).enqueue(new Callback<Integer>() {
             @Override
-            public void onResponse(Call<List<Comodin>> call, Response<List<Comodin>> response) {
-                if (response.isSuccessful()){
-                    List<Comodin> cantidadComodines = response.body();
-                    int cantidad =  cantidadComodines.size();
-                    textViewCantComodin.setText(" " + cantidad);
-                }else{
-                    textViewCantComodin.setText("No tienes comodines");
-                }
-
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
+                Log.i("info retornada comodin", response.body().toString());
+                String cantidadComodines = response.body().toString();
+                textViewCantComodin.setText(""+cantidadComodines);
             }
 
             @Override
-            public void onFailure(Call<List<Comodin>> call, Throwable t) {
-                textViewCantComodin.setText("no sirve");
+            public void onFailure(Call<Integer> call, Throwable t) {
+
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        comodinService.getComodines(DataInfo.respuestaLogin.getToken_type() + " " +
+                DataInfo.respuestaLogin.getAccess_token()).enqueue(new Callback<Integer>() {
+            @Override
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
+                Log.i("info retornada comodin", response.body().toString());
+                String cantidadComodines = response.body().toString();
+                textViewCantComodin.setText(""+cantidadComodines);
+            }
+
+            @Override
+            public void onFailure(Call<Integer> call, Throwable t) {
+
             }
         });
     }

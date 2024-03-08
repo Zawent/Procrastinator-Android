@@ -63,7 +63,14 @@ public class MenuInicioActivity extends AppCompatActivity {
             }
         });
 
+        lista = findViewById(R.id.lista_topApps);
+
+
     }
+
+
+
+
 
 
     public void irAPerfil(View view) {

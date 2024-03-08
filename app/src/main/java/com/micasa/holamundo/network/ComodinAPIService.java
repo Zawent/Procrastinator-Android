@@ -11,8 +11,8 @@ import retrofit2.http.PATCH;
 import retrofit2.http.Path;
 
 public interface ComodinAPIService {
-        @GET("comodin/{id}")
-        Call<List<Comodin>> getComodines(@Header("Authorization") String authorization, @Path( "id") long id);
+        @GET("comodines/cantidad")
+        Call<Integer> getComodines(@Header("Authorization") String authorization);
 
 
 }
