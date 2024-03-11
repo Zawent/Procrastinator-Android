@@ -8,6 +8,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Context;
 import android.graphics.PixelFormat;
@@ -26,6 +27,7 @@ import com.micasa.holamundo.model.Bloqueo;
 import com.micasa.holamundo.model.User;
 import com.micasa.holamundo.network.BloqueoAPICliente;
 import com.micasa.holamundo.network.BloqueoAPIService;
+import com.micasa.holamundo.network.ComodinAPICliente;
 import com.micasa.holamundo.network.ComodinAPIService;
 
 import retrofit2.Call;
@@ -61,6 +63,7 @@ public class BloqueoService extends Service {
         Log.d("Bloquiado", "Servicio de bloqueo iniciado");
         if (intent != null) {
             service = BloqueoAPICliente.getBloqueoService();
+            serviceC = ComodinAPICliente.getCantidadComodin();
             NombreApp = intent.getStringExtra("NombreApp");
             Log.d("Bloquiado", "AAAp " + NombreApp );
             TiempoSegundos = intent.getIntExtra("TiempoEnSegundos", 0);
@@ -72,18 +75,6 @@ public class BloqueoService extends Service {
                 @Override
                 public void run() {
                     Log.d("Bloquiado", "SE DESBLOQUEO " + NombreApp );
-
-                    service.desactivar(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), DataInfo.respuestaLogin.getUser().getId()).enqueue(new Callback<Bloqueo>() {
-                        @Override
-                        public void onResponse(Call<Bloqueo> call, Response<Bloqueo> response) {
-                            Log.i("info", response.body().toString());
-                        }
-
-                        @Override
-                        public void onFailure(Call<Bloqueo> call, Throwable t) {
-                            Log.e("error", t.getMessage());
-                        }
-                    });
                 }
             }, TiempoSegundos * 1000);
             isRunning = true;
@@ -130,6 +121,20 @@ public class BloqueoService extends Service {
         bloqueadoView = LayoutInflater.from(this).inflate(R.layout.bloqueado, null);
 
         Button btnBlouqeo=bloqueadoView.findViewById(R.id.usar_comdin);
+
+        TextView cantComodines = bloqueadoView.findViewById(R.id.cantidadComodin);
+        serviceC.getComodines(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token()).enqueue(new Callback<Integer>() {
+            @Override
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
+                cantComodines.setText(""+response.body().toString());
+            }
+
+            @Override
+            public void onFailure(Call<Integer> call, Throwable t) {
+                Log.e("error", t.getMessage());
+            }
+        });
+
         btnBlouqeo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -190,6 +195,17 @@ public class BloqueoService extends Service {
  
     private void desbloquearApp() {
         countDownTimer.cancel();
+        service.desactivar(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), DataInfo.respuestaLogin.getUser().getId()).enqueue(new Callback<Bloqueo>() {
+            @Override
+            public void onResponse(Call<Bloqueo> call, Response<Bloqueo> response) {
+                Log.i("desbloqueo exitoso", response.body().toString());
+            }
+
+            @Override
+            public void onFailure(Call<Bloqueo> call, Throwable t) {
+                Log.e("error desbloqueo", t.getMessage());
+            }
+        });
         if (windowManager != null && bloqueadoView != null) {
             windowManager.removeView(bloqueadoView);
 
