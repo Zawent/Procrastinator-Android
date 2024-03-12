@@ -12,8 +12,12 @@ import android.widget.TextView;
 
 import com.micasa.holamundo.DataInfo;
 import com.micasa.holamundo.R;
+import com.micasa.holamundo.adapter.AppsAdapter;
+import com.micasa.holamundo.model.Bloqueo;
 import com.micasa.holamundo.model.Comodin;
 import com.micasa.holamundo.model.Consejo;
+import com.micasa.holamundo.model.TopApps;
+import com.micasa.holamundo.network.BloqueoAPICliente;
 import com.micasa.holamundo.network.BloqueoAPIService;
 import com.micasa.holamundo.network.ConsejoAPICliente;
 import com.micasa.holamundo.network.ConsejoAPIService;
@@ -22,6 +26,8 @@ import com.micasa.holamundo.yalogueado.comodin.comodin;
 import com.micasa.holamundo.yalogueado.consejos.MenuConsejoActivity;
 import com.micasa.holamundo.yalogueado.edituser.Perfil;
 import com.micasa.holamundo.model.User;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,6 +50,7 @@ public class MenuInicioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_inicio);
         user = DataInfo.respuestaLogin.getUser();
         serviceC = ConsejoAPICliente.getConsejoService();
+        serviceB = BloqueoAPICliente.getBloqueoService();
         overlayLayout = findViewById(R.id.overlayLayout);
         overlayLayout.setVisibility(View.VISIBLE);
         si = findViewById(R.id.BvNombre);
@@ -63,14 +70,29 @@ public class MenuInicioActivity extends AppCompatActivity {
             }
         });
 
-        lista = findViewById(R.id.lista_topApps);
+
+        serviceB.ListaTopApps(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token()).enqueue(new Callback<TopApps>() {
+            @Override
+            public void onResponse(Call<TopApps> call, Response<TopApps> response) {
+                TopApps respuesta = response.body();
+                Log.i("respuesta", respuesta.toString());
+                cargarLista(respuesta);
+            }
+
+            @Override
+            public void onFailure(Call<TopApps> call, Throwable t) {
+                Log.e("Error", t.getMessage());
+            }
+        });
 
 
     }
 
-
-
-
+    private void cargarLista(TopApps respuesta) {
+        AppsAdapter adapter = new AppsAdapter(respuesta, this);
+        lista = findViewById(R.id.lista_topApps);
+        lista.setAdapter(adapter);
+    }
 
 
     public void irAPerfil(View view) {

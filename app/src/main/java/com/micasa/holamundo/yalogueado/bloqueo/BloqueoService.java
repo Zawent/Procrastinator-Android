@@ -1,5 +1,6 @@
 package com.micasa.holamundo.yalogueado.bloqueo;
 
+import android.app.NotificationChannel;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Build;
@@ -195,6 +196,7 @@ public class BloqueoService extends Service {
  
     private void desbloquearApp() {
         countDownTimer.cancel();
+
         service.desactivar(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), DataInfo.respuestaLogin.getUser().getId()).enqueue(new Callback<Bloqueo>() {
             @Override
             public void onResponse(Call<Bloqueo> call, Response<Bloqueo> response) {
@@ -216,9 +218,10 @@ public class BloqueoService extends Service {
                 }
             });
         }
+    }
 
-
-
+    private void showNotification() {
+       // NotificationChannel channel = new NotificationChannel
     }
 }
 

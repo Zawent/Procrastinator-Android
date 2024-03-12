@@ -1,9 +1,11 @@
 package com.micasa.holamundo.network;
 
 import com.micasa.holamundo.model.Bloqueo;
+import com.micasa.holamundo.model.TopApps;
 
 import java.sql.Time;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -32,6 +34,6 @@ public interface BloqueoAPIService {
     @PATCH("desactivar-bloqueo/{id}")
     Call<Bloqueo> comodin(@Header("Authorization") String authorization,@Path("id") long id , @Field("id_user") long id_user, @Field("duracion") String duracion);
 
-    @GET("bloqueados/topsApps")
-    Call<Bloqueo> ListaTopApps(@Header("Authorization") String authorization);
+    @GET("bloqueados/top")
+    Call<TopApps> ListaTopApps(@Header("Authorization") String authorization);
 }
