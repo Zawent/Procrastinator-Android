@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NivelAPICliente {
 
-    private static final String URL = "http://10.201.194.69:8000/api/";
+    private static final String URL = "http://10.201.194.108:8000/api/";
     private static NivelAPIService instance;
 
     public static NivelAPIService getNivelService() {

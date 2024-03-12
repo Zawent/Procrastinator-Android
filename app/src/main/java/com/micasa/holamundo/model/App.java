@@ -5,6 +5,8 @@ public class App {
     private String nombre;
     private long id_user;
 
+    private int contador;
+
     public App(long id, String nombre, long id_user) {
         this.id = id;
         this.nombre = nombre;
@@ -38,6 +40,14 @@ public class App {
 
     public void setId_user(long id_user) {
         this.id_user = id_user;
+    }
+
+    public int getContador() {
+        return contador;
+    }
+
+    public void setContador(int contador) {
+        this.contador = contador;
     }
 
     @Override
