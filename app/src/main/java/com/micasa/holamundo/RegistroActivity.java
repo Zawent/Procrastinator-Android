@@ -70,12 +70,14 @@ public class RegistroActivity extends AppCompatActivity {
                     startActivity(intent);
                 }else{
                     Toast.makeText(RegistroActivity.this, "Error al crear el Usuario", Toast.LENGTH_SHORT).show();
+                    Log.e("error", String.valueOf(response.body()));
                 }
             }
 
             @Override
             public void onFailure(Call<RespuestaLogin> call, Throwable t) {
                 Toast.makeText(RegistroActivity.this, "---"+t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("error", t.getMessage());
             }
         });
 

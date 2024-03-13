@@ -5,6 +5,8 @@ public class RespuestaLogin {
     private String access_token;
     private String token_type;
 
+    private String error;
+
     public RespuestaLogin(User user, String access_token, String token_type) {
         this.user = user;
         this.access_token = access_token;
@@ -12,6 +14,14 @@ public class RespuestaLogin {
     }
 
     public RespuestaLogin() {
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
     }
 
     public User getUser() {
