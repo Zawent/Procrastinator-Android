@@ -60,6 +60,7 @@ public class RegistroActivity extends AppCompatActivity {
         String fecha_n = formato.format(fecha_nacimiento);
         int id_rol = 2;
 
+
         service.registrar(name, fecha_n, ocupacion, email, password, id_rol).enqueue(new Callback<RespuestaLogin>() {
             @Override
             public void onResponse(Call<RespuestaLogin> call, Response<RespuestaLogin> response) {
