@@ -4,12 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.WindowManager;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class pantalla_lanzamiento extends AppCompatActivity {
+public class MainMainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,14 +18,13 @@ public class pantalla_lanzamiento extends AppCompatActivity {
         TimerTask tarea = new TimerTask() {
             @Override
             public void run() {
-                Intent intent = new Intent(pantalla_lanzamiento.this, MainActivity.class);
+                Intent intent = new Intent(MainMainActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
         };
 
         Timer tiempo = new Timer();
-        tiempo.schedule(tarea,  5000);
-
+        tiempo.schedule(tarea, 3000);
     }
 }

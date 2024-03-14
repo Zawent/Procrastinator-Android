@@ -64,17 +64,12 @@ public class RegistroActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<RespuestaLogin> call, Response<RespuestaLogin> response) {
                 if (response.isSuccessful()){
-
                     DataInfo.respuestaLogin=response.body();
                     Intent intent = new Intent(RegistroActivity.this, Pregunta1Activity.class);
                     intent.putExtra("user", DataInfo.respuestaLogin.getUser());
                     startActivity(intent);
                 }else{
-
-
                     try {
-
-
                         String msg = response.errorBody().string();
                         Toast.makeText(RegistroActivity.this, msg, Toast.LENGTH_SHORT).show();
 
