@@ -11,9 +11,12 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.micasa.holamundo.model.Nivel;
 import com.micasa.holamundo.model.User;
 import com.micasa.holamundo.network.LoginAPICliente;
 import com.micasa.holamundo.network.LoginAPIService;
+import com.micasa.holamundo.network.NivelAPICliente;
+import com.micasa.holamundo.network.NivelAPIService;
 import com.micasa.holamundo.yalogueado.MenuInicioActivity;
 import com.micasa.holamundo.yalogueado.consejos.MenuConsejoActivity;
 import com.micasa.holamundo.yalogueado.edituser.Perfil;
@@ -26,8 +29,11 @@ public class FinEncuestaActivity extends AppCompatActivity {
 
     User user;
     TextView nivel;
+    TextView textNiv;
     private LinearLayout overlayLayout;
     LoginAPIService service;
+
+    NivelAPIService serviceN;
     private Button btnBloqueo;
 
     @Override
@@ -35,7 +41,7 @@ public class FinEncuestaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fin_encuesta);
         service = LoginAPICliente.getLoginService();
-
+        serviceN = NivelAPICliente.getNivelService();
     }
 
     @Override
@@ -52,6 +58,20 @@ public class FinEncuestaActivity extends AppCompatActivity {
                     user=response.body();
                     DataInfo.respuestaLogin.setUser(user);
                     fijarNivel();
+
+                    textNiv = findViewById(R.id.textNivel);
+                    serviceN.getOne(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), user.getNivel_id()).enqueue(new Callback<Nivel>() {
+                        @Override
+                        public void onResponse(Call<Nivel> call, Response<Nivel> response) {
+                            Nivel respuesta = response.body();
+                            textNiv.setText(""+respuesta.getDescripcion());
+                        }
+
+                        @Override
+                        public void onFailure(Call<Nivel> call, Throwable t) {
+                            Log.e("Error", t.getMessage());
+                        }
+                    });
                 }
             }
 

@@ -15,6 +15,7 @@ import com.micasa.holamundo.network.RegisterAPICliente;
 import com.micasa.holamundo.network.RegisterAPIService;
 import com.micasa.holamundo.pregunta.Pregunta1Activity;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -63,19 +64,25 @@ public class RegistroActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<RespuestaLogin> call, Response<RespuestaLogin> response) {
                 if (response.isSuccessful()){
-
                     DataInfo.respuestaLogin=response.body();
                     Intent intent = new Intent(RegistroActivity.this, Pregunta1Activity.class);
                     intent.putExtra("user", DataInfo.respuestaLogin.getUser());
                     startActivity(intent);
                 }else{
-                    Toast.makeText(RegistroActivity.this, "Error al crear el Usuario", Toast.LENGTH_SHORT).show();
+                    try {
+                        String msg = response.errorBody().string();
+                        Toast.makeText(RegistroActivity.this, msg, Toast.LENGTH_SHORT).show();
+
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
 
             @Override
             public void onFailure(Call<RespuestaLogin> call, Throwable t) {
                 Toast.makeText(RegistroActivity.this, "---"+t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("error", t.getMessage());
             }
         });
 
