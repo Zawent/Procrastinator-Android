@@ -28,6 +28,8 @@ import retrofit2.Response;
 public class comodin extends AppCompatActivity {
     private TextView textViewCantComodin;
     private ComodinAPIService comodinService;
+
+    private TextView textViewtiempoRest;
     User user;
 
     @Override
@@ -37,6 +39,21 @@ public class comodin extends AppCompatActivity {
         user = DataInfo.respuestaLogin.getUser();
         comodinService = ComodinAPICliente.getCantidadComodin();
         textViewCantComodin = findViewById(R.id.cantComodin);
+        textViewtiempoRest= findViewById(R.id.tiempoRest);
+        comodinService.getTiempoRestante(DataInfo.respuestaLogin.getToken_type()+" "+
+                DataInfo.respuestaLogin.getAccess_token()).enqueue(new Callback<Integer>() {
+            @Override
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
+                Log.i("tiempo que falta", response.body().toString());
+                String tiempoFalta = response.body().toString();
+                textViewCantComodin.setText(""+tiempoFalta);
+            }
+
+            @Override
+            public void onFailure(Call<Integer> call, Throwable t) {
+
+            }
+        });
         comodinService.getComodines(DataInfo.respuestaLogin.getToken_type() + " " +
                 DataInfo.respuestaLogin.getAccess_token()).enqueue(new Callback<Integer>() {
             @Override

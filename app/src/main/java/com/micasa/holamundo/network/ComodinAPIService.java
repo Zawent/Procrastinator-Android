@@ -14,5 +14,8 @@ public interface ComodinAPIService {
         @GET("comodines/cantidad")
         Call<Integer> getComodines(@Header("Authorization") String authorization);
 
+        @GET ("bloqueoTiempo-restante")
+        Call<Integer> getTiempoRestante(@Header("Authorization")String authorization);
+
 
 }
