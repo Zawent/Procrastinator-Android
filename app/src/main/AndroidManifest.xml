@@ -23,10 +23,19 @@
         android:theme="@style/Theme.Holamundo"
         tools:targetApi="31">
         <activity
-            android:name=".yalogueado.comodin.comodin"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".yalogueado.comodin.ComodinActivity"
+            android:name=".MainMainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".yalogueado.comodin.comodin"
             android:exported="false" />
 
         <service
@@ -39,9 +48,6 @@
             android:exported="false" />
         <activity
             android:name=".yalogueado.consejos.MenuConsejoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BloqueoActivity"
             android:exported="false" />
         <activity
             android:name=".FinEncuestaActivity"
@@ -67,15 +73,7 @@
         <activity
             android:name=".yalogueado.bloqueo.BloqueoService"
             android:exported="true" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

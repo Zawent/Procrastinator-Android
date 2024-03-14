@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">holamundo</string>
+    <string name="app_name">Procras</string>
     <string name="registro"><a href="com.micasa.holamundo.RegistroActivity">Registrate</a></string>
 </resources>
