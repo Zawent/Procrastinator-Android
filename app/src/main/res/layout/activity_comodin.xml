@@ -11,8 +11,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="43dp"
-        android:layout_marginBottom="538dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="18dp"
         android:background="@drawable/cuadritomarron"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
@@ -22,14 +22,14 @@
         android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/overlayLayout"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/overlayLayout"
-        android:layout_width="433dp"
+        android:layout_width="436dp"
         android:layout_height="0dp"
         android:background="#5D0582"
         android:orientation="horizontal"
@@ -37,7 +37,7 @@
         android:paddingRight="2sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/textView18">
 
         <ImageButton
             android:id="@+id/imageButton"
@@ -68,8 +68,8 @@
 
         <ImageButton
             android:id="@+id/imageButton4"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="91dp"
+            android:layout_height="95dp"
             android:layout_weight="1"
             android:backgroundTint="#451559"
             android:onClick="irAConsejos"
@@ -78,7 +78,7 @@
         <ImageButton
             android:id="@+id/imageButton5"
             android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_height="95dp"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:src="@drawable/llave__1_" />
@@ -89,36 +89,19 @@
         android:id="@+id/constraintLayout5"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="106dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginBottom="5dp"
         android:background="#7B1FA2"
         app:layout_constraintBottom_toTopOf="@+id/tiempoRest"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/cantComodin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/cuadritoazul"
-            android:padding="15dp"
-            android:text="TextView"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.555" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <TextView
             android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="17dp"
             android:text="Cantidad de comodines:"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
@@ -130,23 +113,54 @@
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
+            android:id="@+id/cantComodin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cuadritoazul"
+            android:padding="15dp"
+            android:text="TextView"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView17"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+        <TextView
             android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
             android:text="Horas que faltan para ganar un comodin:"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="19dp"
-            tools:layout_editor_absoluteY="163dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cantComodin" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
+        android:id="@+id/tiempoRest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5" />
+
+    <TextView
         android:id="@+id/textView18"
-        android:layout_width="251dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="82dp"
         android:background="@drawable/redondocolor"
         android:padding="15dp"
         android:text="Recuerda que los comodines se obtienen al momento sumar las duraciones de los bloqueos y que esta suma de 48 horas"
@@ -157,18 +171,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiempoRest" />
-
-    <TextView
-        android:id="@+id/tiempoRest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
-        android:text="TextView"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView18"
-        app:layout_constraintEnd_toEndOf="@+id/constraintLayout5"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/constraintLayout5"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
