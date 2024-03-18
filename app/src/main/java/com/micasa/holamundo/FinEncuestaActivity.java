@@ -89,7 +89,7 @@ public class FinEncuestaActivity extends AppCompatActivity {
     }
 
     public void irAMenuInicio(View view){
-        startActivity(new Intent(FinEncuestaActivity.this, MenuInicioActivity.class));
+        startActivity(new Intent(FinEncuestaActivity.this, MainActivity.class));
     }
 
 
