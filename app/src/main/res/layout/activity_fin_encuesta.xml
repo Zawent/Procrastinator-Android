@@ -9,22 +9,21 @@
 
     <LinearLayout
         android:id="@+id/linearLayout5"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="47dp"
-        android:layout_marginEnd="47dp"
         android:gravity="center"
+        android:padding="25dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.623"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.396">
+        app:layout_constraintVertical_bias="0.412">
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40sp"
             android:text="Resultados de la encuesta"
@@ -45,8 +44,8 @@
 
         <TextView
             android:id="@+id/nivelUser"
-            android:layout_width="64dp"
-            android:layout_height="62dp"
+            android:layout_width="65dp"
+            android:layout_height="54dp"
             android:background="@drawable/cuadritonaranja"
             android:paddingTop="10dp"
             android:text="T"
@@ -68,10 +67,11 @@
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
-            android:layout_height="76dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="30sp"
             android:text="¡Felicidades! este es el primer paso para aprovechar mejor tus tiempos."
             android:textAlignment="center"
+            android:textColor="#474747"
             android:textSize="19sp"
             android:textStyle="italic" />
 
@@ -90,21 +90,22 @@
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
-            android:layout_height="76dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="30sp"
             android:text="Recuerda verificar tu correo y vuelve a ingresar con tu cuenta registrada "
             android:textAlignment="center"
+            android:textColor="#000000"
             android:textSize="19sp"
-            android:textStyle="italic" />
+            android:textStyle="normal" />
 
         <Button
             android:id="@+id/button17"
-            android:layout_width="119dp"
-            android:layout_height="58dp"
+            android:layout_width="175dp"
+            android:layout_height="76dp"
             android:layout_marginBottom="20sp"
             android:backgroundTint="#9636BF"
             android:onClick="irAMenuInicio"
-            android:text="Inicio"
+            android:text="Volver a iniciar sesión"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />

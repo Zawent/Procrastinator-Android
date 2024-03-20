@@ -51,8 +51,6 @@ public class MenuInicioActivity extends AppCompatActivity {
         user = DataInfo.respuestaLogin.getUser();
         serviceC = ConsejoAPICliente.getConsejoService();
         serviceB = BloqueoAPICliente.getBloqueoService();
-        overlayLayout = findViewById(R.id.overlayLayout);
-        overlayLayout.setVisibility(View.VISIBLE);
         si = findViewById(R.id.BvNombre);
         si.setText(user.getName());
         consejoDiario = findViewById(R.id.consejoDia);

@@ -8,21 +8,21 @@
     tools:context=".yalogueado.MenuInicioActivity">
 
     <LinearLayout
-        android:id="@+id/overlayLayout"
-        android:layout_width="433dp"
-        android:layout_height="80dp"
-        android:background="#5D0582"
+        android:id="@+id/linearLayout9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:background="@drawable/cuadronegro"
         android:orientation="horizontal"
-        android:paddingLeft="2sp"
-        android:paddingRight="2sp"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:onClick="irABloqueo"
@@ -30,62 +30,61 @@
 
         <ImageButton
             android:id="@+id/imageButton2"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#451559"
+            android:backgroundTint="#5D0581"
             android:onClick="irAPerfil"
             android:src="@drawable/usuario__2_" />
 
         <ImageButton
             android:id="@+id/imageButton3"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:src="@drawable/grafico__1_" />
 
         <ImageButton
             android:id="@+id/imageButton4"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#451559"
+            android:backgroundTint="#5D0581"
             android:onClick="irAConsejos"
             android:src="@drawable/consejos__1_" />
 
         <ImageButton
             android:id="@+id/imageButton5"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:onClick="irAComodin"
             android:src="@drawable/llave__1_" />
-
     </LinearLayout>
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="55dp"
         android:text="Consejo del Dia"
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/consejoDia"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
 
     <TextView
         android:id="@+id/consejoDia"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="161dp"
         android:background="@drawable/cuadritoazul"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
@@ -95,23 +94,20 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.302" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
         android:layout_width="371dp"
-        android:layout_height="126dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/cuadritomitadmarron"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView10"
@@ -144,11 +140,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout8"
         android:layout_width="424dp"
-        android:layout_height="346dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="97dp"
         android:background="#EDC3A1"
-        app:layout_constraintBottom_toTopOf="@+id/overlayLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.964"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/consejoDia"
         tools:layout_editor_absoluteX="-2dp">
 
         <ListView
@@ -164,20 +160,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView23"
             app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/textView22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Top Aplicaciones mas bloqueadas"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.464"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView23"
@@ -209,5 +191,16 @@
             app:layout_constraintStart_toStartOf="@+id/lista_topApps"
             app:layout_constraintTop_toTopOf="@+id/textView23" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Top Aplicaciones mas bloqueadas"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="469dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
