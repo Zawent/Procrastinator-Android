@@ -8,105 +8,151 @@
     tools:context=".yalogueado.MenuInicioActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout9"
-        android:layout_width="0dp"
+        android:id="@+id/linearLayout7"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="27dp"
-        android:background="@drawable/cuadronegro"
-        android:orientation="horizontal"
-        android:padding="10dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        app:layout_constraintVertical_bias="0.0">
 
-        <ImageButton
-            android:id="@+id/imageButton"
+        <TextView
+            android:id="@+id/textView6"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="#5D0582"
-            android:onClick="irABloqueo"
-            android:src="@drawable/candado__1_" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Consejo del Dia"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:textStyle="bold|italic" />
 
-        <ImageButton
-            android:id="@+id/imageButton2"
+        <TextView
+            android:id="@+id/consejoDia"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="#5D0581"
-            android:onClick="irAPerfil"
-            android:src="@drawable/usuario__2_" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/cuadritoazul"
+            android:padding="10dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
-        <ImageButton
-            android:id="@+id/imageButton3"
+        <TextView
+            android:id="@+id/textView22"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="#5D0582"
-            android:src="@drawable/grafico__1_" />
+            android:layout_height="wrap_content"
+            android:text="Top Aplicaciones mas bloqueadas"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="#5D0581"
-            android:onClick="irAConsejos"
-            android:src="@drawable/consejos__1_" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
 
-        <ImageButton
-            android:id="@+id/imageButton5"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="#5D0582"
-            android:onClick="irAComodin"
-            android:src="@drawable/llave__1_" />
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="Cant"
+
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aplicaciones"
+                android:textColor="#000000"
+                android:textSize="14sp"
+
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lista_topApps"
+            android:layout_width="356dp"
+            android:layout_height="222dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/cuadrogrimarroncitoclaro"
+            android:padding="10dp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cuadronegro"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="#5D0582"
+                android:onClick="irABloqueo"
+                android:src="@drawable/candado__1_" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="#5D0581"
+                android:onClick="irAPerfil"
+                android:src="@drawable/usuario__2_" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="#5D0582"
+                android:src="@drawable/grafico__1_" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="#5D0581"
+                android:onClick="irAConsejos"
+                android:src="@drawable/consejos__1_" />
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="#5D0582"
+                android:onClick="irAComodin"
+                android:src="@drawable/llave__1_" />
+        </LinearLayout>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="55dp"
-        android:text="Consejo del Dia"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/consejoDia"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
-
-    <TextView
-        android:id="@+id/consejoDia"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="161dp"
-        android:background="@drawable/cuadritoazul"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingRight="20dp"
-        android:paddingBottom="15dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
-        android:layout_width="371dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="40dp"
+        android:layout_width="357dp"
+        android:layout_height="87dp"
+        android:layout_marginEnd="45dp"
         android:background="@drawable/cuadritomitadmarron"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout7"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -136,71 +182,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView10" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout8"
-        android:layout_width="424dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="97dp"
-        android:background="#EDC3A1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/consejoDia"
-        tools:layout_editor_absoluteX="-2dp">
-
-        <ListView
-            android:id="@+id/lista_topApps"
-            android:layout_width="356dp"
-            android:layout_height="222dp"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="13dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView23"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/textView23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:layout_marginBottom="10dp"
-            android:text="Aplicaciones"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/lista_topApps"
-            app:layout_constraintEnd_toEndOf="@+id/lista_topApps"
-            app:layout_constraintHorizontal_bias="0.551"
-            app:layout_constraintStart_toStartOf="@+id/lista_topApps"
-            app:layout_constraintTop_toBottomOf="@+id/textView22" />
-
-        <TextView
-            android:id="@+id/textView23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="10dp"
-            android:text="Cant"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/textView23"
-            app:layout_constraintStart_toStartOf="@+id/lista_topApps"
-            app:layout_constraintTop_toTopOf="@+id/textView23" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Top Aplicaciones mas bloqueadas"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="469dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

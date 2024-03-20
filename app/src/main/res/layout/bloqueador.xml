@@ -172,7 +172,7 @@
 
     <LinearLayout
         android:id="@+id/overlayLayout"
-        android:layout_width="433dp"
+        android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="#5D0582"
         android:orientation="horizontal"
@@ -184,16 +184,16 @@
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:src="@drawable/candado__1_" />
 
         <ImageButton
             android:id="@+id/imageButton2"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#451559"
             android:onClick="irAPerfil"
@@ -201,8 +201,8 @@
 
         <ImageButton
             android:id="@+id/imageButton3"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:onClick="irAMenuInicio"
@@ -210,8 +210,8 @@
 
         <ImageButton
             android:id="@+id/imageButton4"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#451559"
             android:onClick="irAConsejos"
@@ -219,8 +219,8 @@
 
         <ImageButton
             android:id="@+id/imageButton5"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:onClick="irAComodin"
