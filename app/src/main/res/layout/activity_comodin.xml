@@ -8,6 +8,40 @@
     tools:context=".yalogueado.comodin.comodin">
 
     <TextView
+        android:id="@+id/textView18"
+        android:layout_width="317dp"
+        android:layout_height="128dp"
+        android:layout_marginBottom="189dp"
+        android:background="@drawable/redondocolor"
+        android:padding="15dp"
+        android:text="Recuerda que los comodines se obtienen al momento sumar las duraciones de los bloqueos y que esta suma de 48 horas"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"
+        app:layout_constraintVertical_bias="0.274" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="261dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="240dp"
+        android:background="@drawable/redondocolor"
+        android:padding="15dp"
+        android:text="Solo podras almacenar 3 comodines"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toTopOf="@+id/overlayLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,9 +123,7 @@
         android:layout_width="417dp"
         android:layout_height="246dp"
         android:layout_marginTop="154dp"
-        android:layout_marginBottom="67dp"
         android:background="#7B1FA2"
-        app:layout_constraintBottom_toTopOf="@+id/textView18"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -129,20 +161,4 @@
             app:layout_constraintVertical_chainStyle="packed" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="251dp"
-        android:layout_height="172dp"
-        android:layout_marginBottom="189dp"
-        android:background="@drawable/redondocolor"
-        android:padding="15dp"
-        android:text="Recuerda que los comodines se obtienen al momento sumar las duraciones de los bloqueos y que esta suma de 48 horas"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="19sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
