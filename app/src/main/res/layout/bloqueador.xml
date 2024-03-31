@@ -65,7 +65,9 @@
                 android:layout_height="136dp"
                 android:layout_below="@id/active_block_textview"
                 android:background="@drawable/cuadritoblanco"
-                android:padding="15dp" />
+                android:padding="15dp"
+                android:textColor="#000000"
+                android:textColorHint="#000000" />
         </LinearLayout>
 
         <LinearLayout
@@ -112,6 +114,35 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="Horas:"
+                    android:textColor="#000000"
+                    android:textColorHighlight="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="40dp"
+                    android:text="Minutos:"
+                    android:textColor="#000000"
+                    android:textColorHighlight="#000000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/linearLayout8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -123,9 +154,9 @@
                     android:layout_height="78dp"
                     android:layout_marginEnd="32dp"
                     android:background="@drawable/redondosnputs"
-                    android:hint="Horas"
                     android:inputType="number"
                     android:padding="10dp"
+                    android:text="0"
                     android:textColor="#000000"
                     android:textColorHint="#656565" />
 
@@ -138,9 +169,9 @@
                     android:layout_alignEnd="@+id/hours_edittext"
 
                     android:background="@drawable/redondosnputs"
-                    android:hint="Minutos"
                     android:inputType="number"
                     android:padding="10dp"
+                    android:text="30"
                     android:textColor="#000000"
                     android:textColorHint="#656565" />
             </LinearLayout>
@@ -169,17 +200,17 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#5D0582"
-            android:src="@drawable/candado__1_" />
+            android:backgroundTint="#451559"
+            android:src="@drawable/candadogrande" />
 
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#451559"
+            android:backgroundTint="#5D0582"
             android:onClick="irAPerfil"
-            android:src="@drawable/usuario__2_" />
+            android:src="@drawable/usuario" />
 
         <ImageButton
             android:id="@+id/imageButton3"
@@ -188,16 +219,16 @@
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:onClick="irAMenuInicio"
-            android:src="@drawable/grafico__1_" />
+            android:src="@drawable/grafico" />
 
         <ImageButton
             android:id="@+id/imageButton4"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#451559"
+            android:backgroundTint="#5D0582"
             android:onClick="irAConsejos"
-            android:src="@drawable/consejos__1_" />
+            android:src="@drawable/consejos" />
 
         <ImageButton
             android:id="@+id/imageButton5"
@@ -206,7 +237,7 @@
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:onClick="irAComodin"
-            android:src="@drawable/llave__1_" />
+            android:src="@drawable/llave" />
 
     </LinearLayout>
 

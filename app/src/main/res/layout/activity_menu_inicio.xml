@@ -27,44 +27,44 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#5D0582"
+            android:background="@drawable/boton_estado"
             android:onClick="irABloqueo"
-            android:src="@drawable/candado__1_" />
+            android:src="@drawable/candadoclaro" />
 
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#451559"
+            android:background="@drawable/boton_estado"
             android:onClick="irAPerfil"
-            android:src="@drawable/usuario__2_" />
+            android:src="@drawable/usuario" />
 
         <ImageButton
             android:id="@+id/imageButton3"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#5D0582"
-            android:src="@drawable/grafico__1_" />
+            android:backgroundTint="#451559"
+            android:src="@drawable/graficogrande" />
 
         <ImageButton
             android:id="@+id/imageButton4"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#451559"
+            android:background="@drawable/boton_estado"
             android:onClick="irAConsejos"
-            android:src="@drawable/consejos__1_" />
+            android:src="@drawable/consejos" />
 
         <ImageButton
             android:id="@+id/imageButton5"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#5D0582"
+            android:background="@drawable/boton_estado"
             android:onClick="irAComodin"
-            android:src="@drawable/llave__1_" />
+            android:src="@drawable/llave" />
 
     </LinearLayout>
 
