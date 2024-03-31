@@ -158,25 +158,27 @@ public class InicioBloqueo extends AppCompatActivity {
 
     private List<String> getInstalledApps(PackageManager packageManager) {
         List<ApplicationInfo> apps = packageManager.getInstalledApplications(0);
-        List<String> packageNames = new ArrayList<>();
-        /*List<App> aplicaciones = new ArrayList<>();
-        serviceA.getAppsUser(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), DataInfo.respuestaLogin.getUser().getId()).enqueue(new Callback<List<App>>() {
-            @Override
-            public void onResponse(Call<List<App>> call, Response<List<App>> response) {
-                //aplicaciones = response.body();
-            }
 
-            @Override
-            public void onFailure(Call<List<App>> call, Throwable t) {
-
-            }
-        });*/
+        List<String> appNames = new ArrayList<>();
 
         for (ApplicationInfo appInfo : apps) {
-            packageNames.add(appInfo.packageName);
-            Log.d("InicioBloqueo", "Package name es " + appInfo.packageName);
+            CharSequence appName = packageManager.getApplicationLabel(appInfo);
+            appNames.add(appName != null ? appName.toString() : appInfo.packageName);
+            Log.d("InicioBloqueo", "Nombre de la aplicación: " + (appName != null ? appName.toString() : appInfo.packageName));
         }
-        String nombres = String.join(";", packageNames);
+        String nombres = String.join(";", appNames);
+
+        // serviceA.crearApp(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), nombres, DataInfo.respuestaLogin.getUser().getId()).enqueue(new Callback<App>() {
+        //     @Override
+        //     public void onResponse(Call<App> call, Response<App> response) {
+        //         Log.i("Hola", String.valueOf(response));
+        //     }
+
+        //     @Override
+        //     public void onFailure(Call<App> call, Throwable t) {
+        //         Log.e("Error", "Error al llamar al servicio", t);
+        //     }
+        // });
 
         serviceA.crearApp(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), nombres, DataInfo.respuestaLogin.getUser().getId()).enqueue(new Callback<App>() {
             @Override
@@ -189,7 +191,7 @@ public class InicioBloqueo extends AppCompatActivity {
                 Log.e("Error", "Error al llamar al servicio", t);
             }
         });
-        return packageNames;
+        return appNames;
     }
 
 
