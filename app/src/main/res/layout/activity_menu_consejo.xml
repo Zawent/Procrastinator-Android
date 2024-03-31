@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:id="@+id/overlayLayout"
-        android:layout_width="433dp"
+        android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="#5D0582"
         android:orientation="horizontal"
@@ -17,12 +17,15 @@
         android:paddingRight="2sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:onClick="irABloqueo"
@@ -30,8 +33,8 @@
 
         <ImageButton
             android:id="@+id/imageButton2"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#451559"
             android:onClick="irAPerfil"
@@ -39,8 +42,8 @@
 
         <ImageButton
             android:id="@+id/imageButton3"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:onClick="irAMenuInicio"
@@ -48,16 +51,16 @@
 
         <ImageButton
             android:id="@+id/imageButton4"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#451559"
             android:src="@drawable/consejos__1_" />
 
         <ImageButton
             android:id="@+id/imageButton5"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:onClick="irAComodin"
@@ -65,67 +68,63 @@
 
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/listaConsejo"
-        android:layout_width="337dp"
-        android:layout_height="594dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="38dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.783" />
-
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginTop="36dp"
         android:text="Tu nivel de procrastinacion es"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/numNivel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="288dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="57dp"
-        android:text="Pequeñas ayudas para seguir mejorando tu rutina"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/listaConsejo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numNivel" />
 
     <TextView
         android:id="@+id/numNivel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/cuadritoblanco"
-        android:padding="5dp"
+        android:padding="10dp"
         android:text="TextView"
         android:textColor="#000000"
         android:textColorHint="#101010"
         android:textSize="16sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/textView12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="303dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="24dp"
+        android:text="Pequeñas ayudas para seguir mejorando tu rutina"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numNivel"
+        app:layout_constraintVertical_bias="0.001" />
+
+    <ListView
+        android:id="@+id/listaConsejo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/overlayLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintVertical_bias="0.819" />
 </androidx.constraintlayout.widget.ConstraintLayout>
