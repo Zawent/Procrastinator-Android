@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ComodinAPICliente {
 
-    private static final String URL = "http://192.168.1.65:8000/api/";
+    private static final String URL = "https://procras.api.adsocidm.com/api/";
     private static ComodinAPIService instance;
 
     public static ComodinAPIService getCantidadComodin() {
