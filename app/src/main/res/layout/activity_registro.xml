@@ -142,25 +142,24 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/button5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/black"
+                android:onClick="irAprincipal"
+                android:text="Cancelar"
+                android:textColor="#FFFFFF" />
+
+            <Button
                 android:id="@+id/button4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="10dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/black"
                 android:onClick="guardarUser"
                 android:text="Registrar"
-                android:textColor="#FFFFFF" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/black"
-                android:onClick="irAprincipal"
-                android:text="Cancelar"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 
