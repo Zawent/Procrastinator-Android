@@ -7,8 +7,8 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="521dp"
+        android:layout_width="391dp"
+        android:layout_height="852dp"
         android:background="#5D0582"
         android:padding="10dp"
         android:textAlignment="center"
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:padding="10dp"
+        android:padding="15dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
