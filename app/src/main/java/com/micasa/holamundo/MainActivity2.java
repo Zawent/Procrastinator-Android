@@ -51,6 +51,7 @@ public class  MainActivity2 extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity2.this, MenuInicioActivity.class);
                     intent.putExtra("user", DataInfo.respuestaLogin.getUser());
                     startActivity(intent);
+                    finish();
 
                 } else {
                     Toast.makeText(MainActivity2.this, "error email/ password", Toast.LENGTH_SHORT).show();
@@ -66,6 +67,6 @@ public class  MainActivity2 extends AppCompatActivity {
 
     }
     public void irAprincipal(View view) {
-        startActivity((new Intent(MainActivity2.this, MainActivity.class)));
+        finish();
     }
 }

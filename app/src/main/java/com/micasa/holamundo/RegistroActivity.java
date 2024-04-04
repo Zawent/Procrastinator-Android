@@ -68,6 +68,7 @@ public class RegistroActivity extends AppCompatActivity {
                     Intent intent = new Intent(RegistroActivity.this, Pregunta1Activity.class);
                     intent.putExtra("user", DataInfo.respuestaLogin.getUser());
                     startActivity(intent);
+                    finish();
                 }else{
                     try {
                         String msg = response.errorBody().string();
@@ -89,6 +90,6 @@ public class RegistroActivity extends AppCompatActivity {
     }
 
     public void irAprincipal(View view) {
-        startActivity((new Intent(RegistroActivity.this, MainActivity.class)));
+        finish();
     }
 }
