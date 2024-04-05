@@ -71,17 +71,21 @@ public class MenuConsejoActivity extends AppCompatActivity {
     }
     public void irAPerfil(View view) {
         startActivity(new Intent(this, Perfil.class));
+        finish();
     }
 
     public void irABloqueo(View view) {
         startActivity(new Intent(MenuConsejoActivity.this, InicioBloqueo.class));
+        finish();
     }
 
     public void irAMenuInicio(View view){
         startActivity(new Intent(MenuConsejoActivity.this, MenuInicioActivity.class));
+        finish();
     }
 
     public void irAComodin(View view) {
         startActivity((new Intent(MenuConsejoActivity.this, comodin.class)));
+        finish();
     }
 }

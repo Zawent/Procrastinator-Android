@@ -108,7 +108,6 @@ public class Pregunta1Activity extends AppCompatActivity {
            // intent.putExtra("user", user);
             startActivity(intent);
             finish();
-
         }
 
         serviceR.sendRespuesta(user.getId(), 2L, null, (long) numPregunta-1).enqueue(new Callback<Respuesta>() {

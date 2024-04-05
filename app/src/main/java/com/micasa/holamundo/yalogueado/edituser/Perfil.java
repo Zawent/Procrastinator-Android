@@ -239,17 +239,21 @@ public class Perfil extends AppCompatActivity {
 
     public void irAConsejos(View view) {
         startActivity(new Intent(Perfil.this, MenuConsejoActivity.class));
+        finish();
     }
 
     public void irABloqueo(View view) {
         startActivity(new Intent(Perfil.this, InicioBloqueo.class));
+        finish();
     }
 
     public void irAMenuInicio(View view){
         startActivity(new Intent(Perfil.this, MenuInicioActivity.class));
+        finish();
     }
 
     public void irAComodin(View view) {
         startActivity((new Intent(Perfil.this, comodin.class)));
+        finish();
     }
 }
