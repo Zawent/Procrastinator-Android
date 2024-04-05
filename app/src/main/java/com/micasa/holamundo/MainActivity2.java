@@ -25,7 +25,7 @@ public class  MainActivity2 extends AppCompatActivity {
     EditText txtUsuario;
     EditText txtPassword;
 
-
+//Se inicia el proceso de logeo.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +33,7 @@ public class  MainActivity2 extends AppCompatActivity {
 
         service = LoginAPICliente.getLoginService();
     }
-
+//Aqui se obtienen los datos de logeo y se verifican.
     public void ingresar (View view){
         txtUsuario = findViewById(R.id.txtUser);
         txtPassword = findViewById(R.id.txtPassword);
