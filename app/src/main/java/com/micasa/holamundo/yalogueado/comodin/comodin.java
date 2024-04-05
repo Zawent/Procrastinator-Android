@@ -74,17 +74,21 @@ public class comodin extends AppCompatActivity {
 
     public void irAPerfil(View view) {
         startActivity(new Intent(comodin.this, Perfil.class));
+        finish();
     }
 
     public void irAConsejos(View view) {
         startActivity(new Intent(comodin.this, MenuConsejoActivity.class));
+        finish();
     }
 
     public void irABloqueo(View view) {
         startActivity((new Intent(comodin.this, InicioBloqueo.class)));
+        finish();
     }
 
     public void irAMenuInicio(View view){
         startActivity(new Intent(comodin.this, MenuInicioActivity.class));
+        finish();
     }
 }

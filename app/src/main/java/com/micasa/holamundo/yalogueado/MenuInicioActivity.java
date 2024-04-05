@@ -95,18 +95,22 @@ public class MenuInicioActivity extends AppCompatActivity {
 
     public void irAPerfil(View view) {
         startActivity(new Intent(MenuInicioActivity.this, Perfil.class));
+        finish();
     }
 
     public void irAConsejos(View view) {
         startActivity(new Intent(MenuInicioActivity.this, MenuConsejoActivity.class));
+        finish();
     }
 
     public void irABloqueo(View view) {
         startActivity((new Intent(MenuInicioActivity.this, InicioBloqueo.class)));
+        finish();
     }
 
     public void irAComodin(View view) {
         startActivity((new Intent(MenuInicioActivity.this, comodin.class)));
+        finish();
     }
 
 }

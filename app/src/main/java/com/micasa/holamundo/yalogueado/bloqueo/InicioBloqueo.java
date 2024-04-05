@@ -316,18 +316,22 @@ public class InicioBloqueo extends AppCompatActivity {
 
     public void irAPerfil(View view) {
         startActivity(new Intent(InicioBloqueo.this, Perfil.class));
+        finish();
     }
 
     public void irAConsejos(View view) {
         startActivity(new Intent(InicioBloqueo.this, MenuConsejoActivity.class));
+        finish();
     }
 
     public void irAMenuInicio(View view){
         startActivity(new Intent(InicioBloqueo.this, MenuInicioActivity.class));
+        finish();
     }
 
     public void irAComodin(View view) {
         startActivity((new Intent(InicioBloqueo.this, comodin.class)));
+        finish();
     }
 
 

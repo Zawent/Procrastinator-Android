@@ -107,7 +107,7 @@ public class Pregunta1Activity extends AppCompatActivity {
             Intent intent = new Intent(Pregunta1Activity.this, FinEncuestaActivity.class);
            // intent.putExtra("user", user);
             startActivity(intent);
-
+            finish();
         }
 
         serviceR.sendRespuesta(user.getId(), 2L, null, (long) numPregunta-1).enqueue(new Callback<Respuesta>() {
@@ -145,6 +145,7 @@ public class Pregunta1Activity extends AppCompatActivity {
             Intent intent = new Intent(Pregunta1Activity.this, FinEncuestaActivity.class);
            // intent.putExtra("user", user);
             startActivity(intent);
+            finish();
         }
 
         serviceR.sendRespuesta(user.getId(), 1L, null, (long) numPregunta-1).enqueue(new Callback<Respuesta>() {
