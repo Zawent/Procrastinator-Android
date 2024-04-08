@@ -37,7 +37,7 @@ public class Pregunta1Activity extends AppCompatActivity {
 
     int respuestaSi = 0;
     int respuestaNo = 0;
-
+//Aqui se realizan las preguntas obteniendo las respuestas y procesando de acuerdo a si la respuesta es si o no.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
