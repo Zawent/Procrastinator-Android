@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.micasa.holamundo.DataInfo;
 import com.micasa.holamundo.R;
+import com.micasa.holamundo.RegistroActivity;
 import com.micasa.holamundo.model.Nivel;
 import com.micasa.holamundo.model.User;
 import com.micasa.holamundo.network.NivelAPICliente;
@@ -26,6 +27,7 @@ import com.micasa.holamundo.yalogueado.bloqueo.InicioBloqueo;
 import com.micasa.holamundo.yalogueado.comodin.comodin;
 import com.micasa.holamundo.yalogueado.consejos.MenuConsejoActivity;
 
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -198,6 +200,14 @@ public class Perfil extends AppCompatActivity {
                             fecha_user.setVisibility(View.VISIBLE);
                             ocupacion_user.setVisibility(View.VISIBLE);
                             btnEditar.setVisibility(View.VISIBLE);
+                        }else{
+                            try {
+                                String msg = response.errorBody().string();
+                                Toast.makeText(Perfil.this, msg, Toast.LENGTH_SHORT).show();
+
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
                     }
 
