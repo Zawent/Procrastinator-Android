@@ -3,6 +3,7 @@ package com.micasa.holamundo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +26,7 @@ public class  MainActivity2 extends AppCompatActivity {
     EditText txtUsuario;
     EditText txtPassword;
 
+    private String PREFS_KEY = "mispreferencias";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,7 @@ public class  MainActivity2 extends AppCompatActivity {
         String password = txtPassword.getText().toString();
 
         service.login(email, password).enqueue(new Callback<RespuestaLogin>() {
+
             @Override
             public void onResponse(Call<RespuestaLogin> call, Response<RespuestaLogin> response) {
                 Log.i("login", response.toString());
@@ -50,6 +53,11 @@ public class  MainActivity2 extends AppCompatActivity {
                     DataInfo.respuestaLogin = response.body();
                     Intent intent = new Intent(MainActivity2.this, MenuInicioActivity.class);
                     intent.putExtra("user", DataInfo.respuestaLogin.getUser());
+                    //Crear el Shared
+                    SharedPreferences usuario = MainActivity2.this.getSharedPreferences("token", MODE_PRIVATE);
+                    SharedPreferences.Editor editUsuario = usuario.edit();
+                    editUsuario.putString("token", DataInfo.respuestaLogin.getAccess_token());
+                    editUsuario.commit();
                     startActivity(intent);
                     finish();
 

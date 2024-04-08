@@ -21,4 +21,7 @@ public interface LoginAPIService {
 
     @GET("login-google")
     Call<User> getGoogle();
+
+    @GET("auth/logout")
+    Call <RespuestaLogin> logout (@Header("Authorization") String authorization);
 }

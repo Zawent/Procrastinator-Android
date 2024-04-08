@@ -51,7 +51,9 @@ public class RegistroActivity extends AppCompatActivity {
         try {
             fecha_nacimiento = formato.parse(cajaFecha);
         } catch (ParseException e) {
-            throw new RuntimeException(e);
+            Toast.makeText(this, "La fecha no puede estar vacia", Toast.LENGTH_SHORT).show();
+            return;
+            //throw new RuntimeException(e);
         }
 
         String ocupacion = caja3.getText().toString();
