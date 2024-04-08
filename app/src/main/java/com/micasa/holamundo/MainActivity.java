@@ -34,9 +34,6 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    
-
     TextView txtRegistro;
     LoginAPIService service;
     //FirebaseAuth mAuth;
@@ -44,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private GoogleSignInClient gsc;
     private static final int REQ_ONE_TAP = 2;  // Can be any integer unique to the Activity.
     private boolean showOneTapUI = true;
-
+//Proceso para el inicio de sesion por medio de google (No implementado)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
