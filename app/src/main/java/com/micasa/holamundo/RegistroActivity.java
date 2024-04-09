@@ -46,7 +46,7 @@ public class RegistroActivity extends AppCompatActivity {
 
         String name = caja1.getText().toString();
         String cajaFecha = caja2.getText().toString();
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha_nacimiento = null;
         try {
             fecha_nacimiento = formato.parse(cajaFecha);
