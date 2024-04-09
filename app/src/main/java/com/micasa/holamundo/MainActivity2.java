@@ -26,6 +26,7 @@ public class  MainActivity2 extends AppCompatActivity {
     EditText txtUsuario;
     EditText txtPassword;
 
+//Se inicia el proceso de logeo.
     private String PREFS_KEY = "mispreferencias";
 
 //Se inicia el proceso de logeo.
