@@ -35,7 +35,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
+/*En esta actividad se reciben los datos del bloqueo y se procesan para realizar el bloqueo*/
 public class BloqueoService extends Service {
 
     private static final String TAG = "Bloquiado";
@@ -56,8 +56,8 @@ public class BloqueoService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d("Bloquiado", "Servicio de bloqueo iniciado");
-        // En este IF se obtienen los datos como el nombre de la app a bloquear para empezar el bloqueo y un contador que se encarga de detectar si el tiempo de
-        //bloqueo esta activo de lo contrario se detiene el contador y se informa que la app de ha desbloqueado
+        /* En este IF se obtienen los datos como el nombre de la app a bloquear para empezar el bloqueo y un contador que se encarga de detectar si el tiempo de
+        bloqueo esta activo de lo contrario se detiene el contador y se informa que la app de ha desbloqueado*/
 
         if (intent != null) {
             service = BloqueoAPICliente.getBloqueoService();
@@ -79,7 +79,7 @@ public class BloqueoService extends Service {
         } else {
             stopSelf();
         }
-        //Este countDownTimer sirve para mostrar el tiempo restante del bloqueo representado en segundos
+        /*Este countDownTimer sirve para mostrar el tiempo restante del bloqueo representado en segundos*/
         countDownTimer = new CountDownTimer(TiempoSegundos * 1000, 1000) {
             public void onTick(long millisUntilFinished) {
                 long secondsRemaining = millisUntilFinished / 1000;
@@ -94,7 +94,7 @@ public class BloqueoService extends Service {
         return START_STICKY;
 
     }
-    //este MandarBloqueos sirve para mostrar los bloqueos activos en un campo de la pagina donde se realizan los bloqueos
+    /*este MandarBloqueos sirve para mostrar los bloqueos activos en un campo de la pagina donde se realizan los bloqueos*/
     private void MandarBloqueos(String activeBlocks) {
         Intent intent = new Intent("BLOQUEOS_ACTIVOS");
         intent.putExtra("bloques_activos", activeBlocks);
@@ -105,7 +105,7 @@ public class BloqueoService extends Service {
         return null;
     }
 
-    //Si el contador se detiene se detendra el bloqueo
+    /*Si el contador se detiene se detendra el bloqueo*/
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -116,11 +116,11 @@ public class BloqueoService extends Service {
         desbloquearApp();
         isRunning = false;
     }
-    // en bloquearApp se realiza el inflate que trae el xml "Bloqueado" el cual es la pagina q se superpone para realizar el bloqueo.
+    /* en bloquearApp se realiza el inflate que trae el xml "Bloqueado" el cual es la pagina q se superpone para realizar el bloqueo*/
     private void bloquearApp() {
 
         bloqueadoView = LayoutInflater.from(this).inflate(R.layout.bloqueado, null);
-// por aqui se hacen comprobaciones para desbloquear una app usando un comodin como la validacion de comodines disponibles.
+/*por aqui se hacen comprobaciones para desbloquear una app usando un comodin como la validacion de comodines disponibles*/
         Button btnBlouqeo=bloqueadoView.findViewById(R.id.usar_comdin);
 
         TextView cantComodines = bloqueadoView.findViewById(R.id.cantidadComodin);
@@ -168,7 +168,7 @@ public class BloqueoService extends Service {
                 });
             }
         });
-// aqui estan las caracteristicas de la pagina que se superpone.
+/* aqui estan las caracteristicas de la pagina que se superpone.*/
         WindowManager.LayoutParams params;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             params = new WindowManager.LayoutParams(
@@ -193,7 +193,7 @@ public class BloqueoService extends Service {
 
         Toast.makeText(this, "La aplicación " + NombreApp + " se ha bloqueado.", Toast.LENGTH_SHORT).show();
     }
- // en desbloquearApp se elimina la vista que se usa para bloquear y detiene el contador, desbloqueando asi la app.
+ /* en desbloquearApp se elimina la vista que se usa para bloquear y detiene el contador, desbloqueando asi la app*/
     private void desbloquearApp() {
         countDownTimer.cancel();
 

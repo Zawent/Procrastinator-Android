@@ -24,7 +24,7 @@ import com.micasa.holamundo.network.RespuestaAPIService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+/*Aqui se maneja las respuestas de las preguntas*/
 public class Pregunta1Activity extends AppCompatActivity {
 
     private PreguntaAPIService serviceP;
@@ -37,7 +37,7 @@ public class Pregunta1Activity extends AppCompatActivity {
 
     int respuestaSi = 0;
     int respuestaNo = 0;
-//Aqui se realizan las preguntas obteniendo las respuestas y procesando de acuerdo a si la respuesta es si o no.
+/*Aqui se realizan las preguntas obteniendo las respuestas y procesando de acuerdo a si la respuesta es si o no.*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

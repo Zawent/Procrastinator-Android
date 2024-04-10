@@ -19,17 +19,17 @@ import com.micasa.holamundo.yalogueado.bloqueo.InicioBloqueo;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+/*Aqui se maneja el inicio de sesion propio de la app*/
 public class  MainActivity2 extends AppCompatActivity {
 
     private LoginAPIService service;
     EditText txtUsuario;
     EditText txtPassword;
 
-//Se inicia el proceso de logeo.
+/*Se inicia el proceso de logeo.*/
     private String PREFS_KEY = "mispreferencias";
 
-//Se inicia el proceso de logeo.
+/*Se inicia el proceso de logeo.*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +37,7 @@ public class  MainActivity2 extends AppCompatActivity {
 
         service = LoginAPICliente.getLoginService();
     }
-//Aqui se obtienen los datos de logeo y se verifican.
+/*Aqui se obtienen los datos de logeo y se verifican.*/
     public void ingresar (View view){
         txtUsuario = findViewById(R.id.txtUser);
         txtPassword = findViewById(R.id.txtPassword);

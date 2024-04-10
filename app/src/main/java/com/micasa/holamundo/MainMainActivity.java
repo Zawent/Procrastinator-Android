@@ -10,7 +10,7 @@ import java.util.TimerTask;
 
 public class MainMainActivity extends AppCompatActivity {
 
-    //Aqui se realizan los procesos para mostrar una pantalla de lanzamiento mientras carga la aplicacion.
+    /*Aqui se realizan los procesos para mostrar una pantalla de lanzamiento mientras carga la aplicacion.*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
