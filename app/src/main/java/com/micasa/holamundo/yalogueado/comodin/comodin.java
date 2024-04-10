@@ -24,12 +24,12 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+/*En esta actividad se maneja lo relacionado a la generacion de comodin*/
 public class comodin extends AppCompatActivity {
     private TextView textViewCantComodin;
     private ComodinAPIService comodinService;
     User user;
-//Aqui se inician los procesos para determinar los comodines disponibles al iniciar la app.
+/*Aqui se inician los procesos para determinar los comodines disponibles al iniciar la app.*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +52,7 @@ public class comodin extends AppCompatActivity {
             }
         });
     }
-//Una vez se logea el usuario se muestra la cantida de comodines que este posee.
+/*Una vez se logea el usuario se muestra la cantida de comodines que este posee.*/
     @Override
     protected void onStart() {
         super.onStart();

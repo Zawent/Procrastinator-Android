@@ -39,7 +39,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+/*En esta actividad se maneja lo que se muestra en la pantalla de menu de inicio*/
 public class MenuInicioActivity extends AppCompatActivity {
 
     User user;

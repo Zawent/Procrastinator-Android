@@ -34,7 +34,7 @@ import java.util.regex.Pattern;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+/*En esta actividad se asignan los datos al perfil de usuario y se manejan la edicion del mismo*/
 public class Perfil extends AppCompatActivity {
 
     Nivel nivel;
@@ -161,7 +161,7 @@ public class Perfil extends AppCompatActivity {
         editFecha.setText(""+user.getFecha_nacimiento());
         editOcupacion.setText(""+user.getOcupacion());
     }
-
+/*Aqui se obtienen los datos editados del perfil*/
     public void guardarPerfil(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(Perfil.this);
         builder.setMessage("¿Estas seguro de guardar cambios?").setCancelable(false).setPositiveButton("Si", new DialogInterface.OnClickListener() {

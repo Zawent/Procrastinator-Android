@@ -25,14 +25,14 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+/*En esta actividad se maneja la asignacion de consejos*/
 public class MenuConsejoActivity extends AppCompatActivity {
 
     TextView numeroNivel;
     ListView lista;
     private ConsejoAPIService serviceC;
 
-
+/*Aqui se asignan los datos del consejo a las variables*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +47,7 @@ public class MenuConsejoActivity extends AppCompatActivity {
         super.onStart();
         loadData();
     }
-
+/*Aqui se muestran los consejos*/
     private void loadData(){
         serviceC.getAll(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), DataInfo.respuestaLogin.getUser().getNivel_id()).enqueue(new Callback<List<Consejo>>() {
             @Override

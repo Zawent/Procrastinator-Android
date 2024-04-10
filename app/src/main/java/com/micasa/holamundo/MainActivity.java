@@ -31,7 +31,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
+/*Inicio de sesion por google no implementado*/
 public class MainActivity extends AppCompatActivity {
 
     TextView txtRegistro;
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private GoogleSignInClient gsc;
     private static final int REQ_ONE_TAP = 2;  // Can be any integer unique to the Activity.
     private boolean showOneTapUI = true;
-//Proceso para el inicio de sesion por medio de google (No implementado)
+/*Proceso para el inicio de sesion por medio de google (No implementado)*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

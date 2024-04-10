@@ -23,19 +23,19 @@ import java.util.Date;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+/*En esta actividad se maneja el registro de usuario*/
 public class RegistroActivity extends AppCompatActivity {
 
     private RegisterAPIService service;
     EditText caja1, caja2, caja3, caja4, caja5;
-//Se inicia el proceso de registro.
+/*Se inicia el proceso de registro.*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
         service = RegisterAPICliente.getRegisterService();
     }
-//Aqui se guardan los datos proporcionados por el usuario en el registro.
+/*Aqui se guardan los datos proporcionados por el usuario en el registro.*/
     public void guardarUser (View view) {
 
         caja1 = findViewById(R.id.editTextNombre);
