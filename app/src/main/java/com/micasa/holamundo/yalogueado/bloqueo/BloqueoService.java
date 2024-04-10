@@ -220,8 +220,5 @@ public class BloqueoService extends Service {
         }
     }
 
-    private void showNotification() {
-       // NotificationChannel channel = new NotificationChannel
-    }
 }
 

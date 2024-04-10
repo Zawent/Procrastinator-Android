@@ -84,28 +84,6 @@ public class Perfil extends AppCompatActivity {
         fijarFecha();
         fijarOcupacion();
 
-        /*serviceLog.getUser(
-                DataInfo.respuestaLogin.getToken_type()+" "+
-                        DataInfo.respuestaLogin.getAccess_token()
-        ).enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                if(response.isSuccessful()){
-                    user=response.body();
-                    fijarNombre();
-                    fijarNivel();
-                    fijarTextoNivel();
-                    fijarFecha();
-                    fijarOcupacion();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                Log.e("error",t.getMessage());
-
-            }
-        });*/
     }
 
     private void fijarNombre(){

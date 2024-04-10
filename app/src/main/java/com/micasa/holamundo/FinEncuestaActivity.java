@@ -1,7 +1,9 @@
 package com.micasa.holamundo;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +20,8 @@ import com.micasa.holamundo.network.LoginAPIService;
 import com.micasa.holamundo.network.NivelAPICliente;
 import com.micasa.holamundo.network.NivelAPIService;
 import com.micasa.holamundo.yalogueado.MenuInicioActivity;
+import com.micasa.holamundo.yalogueado.bloqueo.InicioBloqueo;
+import com.micasa.holamundo.yalogueado.comodin.comodin;
 import com.micasa.holamundo.yalogueado.consejos.MenuConsejoActivity;
 import com.micasa.holamundo.yalogueado.edituser.Perfil;
 
@@ -88,8 +92,19 @@ public class FinEncuestaActivity extends AppCompatActivity {
         nivel.setText(""+user.getNivel_id());
     }
 
+
     public void irAMenuInicio(View view){
-        finish();
+        AlertDialog.Builder builer = new AlertDialog.Builder(FinEncuestaActivity.this);
+        builer.setMessage("Revisa tu correo electronico para validar tu perfil y vuelve a iniciar seccion");
+        builer.setCancelable(false);
+        builer.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity((new Intent(FinEncuestaActivity.this, MainActivity.class)));
+                finish();
+            }
+        });
+        builer.create().show();
     }
 
 

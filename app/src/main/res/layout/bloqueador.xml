@@ -43,6 +43,7 @@
                 android:layout_below="@id/minutes_edittext"
                 android:layout_marginBottom="15dp"
                 android:backgroundTint="#D51515"
+                android:onClick="bloqueaaaa"
                 android:text="Bloquear"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
