@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginAPICliente {
 
-    private static final String URL = "http://10.201.194.108:8000/api/";
+    private static final String URL = "https://procras.api.adsocidm.com/api/";
     private static LoginAPIService instance;
 
     public static LoginAPIService getLoginService() {
@@ -16,8 +16,10 @@ public class LoginAPICliente {
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 
             final OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+            /*
             httpClient.addInterceptor(logging);
-
+            httpClient.setConnectTimeout$okhttp(15);
+*/
             Retrofit http = new Retrofit.Builder().baseUrl(URL).addConverterFactory(GsonConverterFactory.create()).client(httpClient.build()).build();
 
             //Retrofit http = new Retrofit.Builder().baseUrl(URL).addConverterFactory(GsonConverterFactory.create()).build();

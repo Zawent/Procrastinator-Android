@@ -8,129 +8,61 @@
     android:background="@drawable/procras"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/este"
-        android:layout_width="316dp"
-        android:layout_height="147dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginBottom="338dp"
-        android:background="@drawable/cuadritoblanco"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.869">
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="211dp"
-            android:layout_height="116dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.238"
-            app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.516">
-
-            <Button
-                android:id="@+id/btnGoogle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#E31B1B"
-                android:onClick="google"
-                android:text="Google"
-                android:textColor="#FFFFFF"
-                android:textSize="25sp" />
-
-            <Button
-                android:id="@+id/btnLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#9636BF"
-                android:onClick="login"
-                android:text="Iniciar sesión"
-                android:textColor="#FFFFFF"
-                android:textSize="25sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="68dp"
-            android:layout_height="114dp"
-            android:layout_marginStart="16dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.432">
-
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:padding="5dp"
-                app:shapeAppearanceOverlay="@style/radius"
-                app:srcCompat="@drawable/k14jcwar_400x400"
-                app:strokeColor="#CA4E4E"
-                app:strokeWidth="2sp" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:padding="5dp"
-                app:shapeAppearanceOverlay="@style/radius"
-                app:srcCompat="@drawable/md_5afc6f6f0d492"
-                app:strokeColor="#CA4E4E"
-                app:strokeWidth="2sp" />
-
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/textView2"
+    <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
-        android:text="Aun no tienes cuenta?"
-        android:textColor="#FCF6DC"
-        android:textColorHint="#FCF6DC"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtRegistro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/este"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/txtRegistro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="124dp"
-        android:text="@string/registro"
-        android:textColorHighlight="#DCBC84"
-        android:textColorLink="#DCBC84"
-        android:textSize="25sp"
-        android:textStyle="bold|italic"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="302dp"
-        android:layout_height="314dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logoeste" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="291dp"
+            android:layout_height="301dp"
+            android:layout_marginBottom="40sp"
+            app:srcCompat="@drawable/logoeste" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40sp"
+            android:backgroundTint="#FFFCF6DC"
+            android:onClick="login"
+            android:text="Iniciar sesión"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40sp"
+            android:text="Aun no tienes cuenta?"
+            android:textColor="#FCF6DC"
+            android:textColorHint="#FCF6DC"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40sp"
+            android:text="@string/registro"
+            android:textColorHighlight="#DCBC84"
+            android:textColorLink="#DCBC84"
+            android:textSize="25sp"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:background="#F1CFFF"
     tools:context=".yalogueado.edituser.Perfil">
 
     <LinearLayout
         android:id="@+id/overlayLayout"
-        android:layout_width="433dp"
+        android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="#5D0582"
         android:orientation="horizontal"
@@ -17,51 +18,54 @@
         android:paddingRight="2sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:onClick="irABloqueo"
-            android:src="@drawable/candado__1_" />
+            android:src="@drawable/candadoclaro" />
 
         <ImageButton
             android:id="@+id/imageButton2"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#451559"
-            android:src="@drawable/usuario__2_" />
+            android:src="@drawable/usuariogrande" />
 
         <ImageButton
             android:id="@+id/imageButton3"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:onClick="irAMenuInicio"
-            android:src="@drawable/grafico__1_" />
+            android:src="@drawable/grafico" />
 
         <ImageButton
             android:id="@+id/imageButton4"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#451559"
+            android:backgroundTint="#5D0582"
             android:onClick="irAConsejos"
-            android:src="@drawable/consejos__1_" />
+            android:src="@drawable/consejos" />
 
         <ImageButton
             android:id="@+id/imageButton5"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:onClick="irAComodin"
-            android:src="@drawable/llave__1_" />
+            android:src="@drawable/llave" />
 
     </LinearLayout>
 
@@ -85,6 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Nivel de procrastinación"
+            android:textColor="#000000"
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -100,6 +105,7 @@
             android:background="@drawable/cuadritonaranja"
             android:padding="7dp"
             android:text="4"
+            android:textColor="#000000"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/txtnombrenivel"
@@ -114,6 +120,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Text"
+            android:textColor="#000000"
             android:textSize="21sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -143,10 +150,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/cuadritomarron"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:paddingRight="15dp"
-        android:paddingBottom="15dp"
+        android:padding="10dp"
         android:text="Perfil de usuario"
         android:textColor="#000000"
         android:textSize="34sp"
@@ -161,15 +165,12 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginBottom="27dp"
+        android:layout_marginTop="32dp"
         android:text="Fecha de nacimiento"
+        android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editFecha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
@@ -177,48 +178,53 @@
         android:id="@+id/txtfechanacimiento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
         android:background="@drawable/redondocolor"
-        android:padding="7dp"
+        android:padding="10dp"
         android:text="TextView"
+        android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editFecha"
-        app:layout_constraintEnd_toEndOf="@+id/txtocupacion"
-        app:layout_constraintStart_toStartOf="@+id/textView8" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.072" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="24dp"
         android:text="Ocupación"
+        android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/txtfechanacimiento" />
 
     <TextView
         android:id="@+id/txtocupacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginBottom="2dp"
         android:background="@drawable/redondocolor"
-        android:padding="7dp"
+        android:padding="10dp"
         android:text="TextView"
+        android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editOcupacion"
-        app:layout_constraintStart_toStartOf="@+id/btneditaruser" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintVertical_bias="0.1" />
 
     <TextView
         android:id="@+id/txtNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/redondocolor"
-        android:padding="7dp"
+        android:padding="10dp"
         android:text="text"
+        android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -230,90 +236,99 @@
         android:id="@+id/editOcupacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/redondosnputs"
         android:ems="10"
         android:inputType="text"
         android:padding="7dp"
         android:text="Name"
+        android:textAlignment="inherit"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editFecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="85dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/redondosnputs"
         android:ems="10"
         android:inputType="text"
         android:padding="7dp"
         android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.99"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.008" />
 
     <EditText
         android:id="@+id/editName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="100dp"
         android:background="@drawable/redondosnputs"
         android:ems="10"
         android:inputType="text"
         android:padding="7dp"
         android:text="Name"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.162" />
 
-    <Button
-        android:id="@+id/btneditaruser"
+    <LinearLayout
+        android:id="@+id/linearLayout12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="104dp"
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toTopOf="@+id/overlayLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtocupacion"
+        app:layout_constraintVertical_bias="0.726">
+
+        <Button
+            android:id="@+id/btnCancelarUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#5D0582"
+            android:layout_marginEnd="20dp"
+            android:onClick="cancelarPerfil"
+            android:text="Cancelar"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnGuardarUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#5D0582"
+            android:onClick="guardarPerfil"
+            android:text="Guardar"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btneditaruser"
+        android:layout_width="97dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#FFEC5F02"
         android:onClick="editarPerfil"
         android:text="Editar perfil"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnCancelarUser"
-        app:layout_constraintTop_toBottomOf="@+id/txtocupacion"
-        app:layout_constraintVertical_bias="0.98"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/btnCancelarUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="104dp"
-        android:backgroundTint="#5D0582"
-        android:onClick="cancelarPerfil"
-        android:text="Cancelar"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/overlayLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtocupacion"
-        app:layout_constraintVertical_bias="0.98" />
-
-    <Button
-        android:id="@+id/btnGuardarUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="104dp"
-        android:backgroundTint="#5D0582"
-        android:onClick="guardarPerfil"
-        android:text="Guardar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btneditaruser"
-        app:layout_constraintTop_toBottomOf="@+id/txtocupacion"
-        app:layout_constraintVertical_bias="0.98" />
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

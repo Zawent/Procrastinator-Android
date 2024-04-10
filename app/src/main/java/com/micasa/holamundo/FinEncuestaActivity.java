@@ -35,7 +35,7 @@ public class FinEncuestaActivity extends AppCompatActivity {
 
     NivelAPIService serviceN;
     private Button btnBloqueo;
-
+//Se inicia procesos para la encuesta.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +43,7 @@ public class FinEncuestaActivity extends AppCompatActivity {
         service = LoginAPICliente.getLoginService();
         serviceN = NivelAPICliente.getNivelService();
     }
-
+//Aqui se inicia la encuesta y se obtienen las respuestas de la misma.
     @Override
     protected void onStart() {
         super.onStart();
@@ -82,14 +82,14 @@ public class FinEncuestaActivity extends AppCompatActivity {
         });
 
     }
-
+//Aqui se le asigna el nivel al usuario despues de la encuesta.
     private void fijarNivel() {
         nivel = findViewById(R.id.nivelUser);
         nivel.setText(""+user.getNivel_id());
     }
 
     public void irAMenuInicio(View view){
-        startActivity(new Intent(FinEncuestaActivity.this, MenuInicioActivity.class));
+        finish();
     }
 
 

@@ -39,10 +39,8 @@ public class ConsejoAdapter extends BaseAdapter {
 
         Consejo consejo = consejos.get(position);
 
-        TextView txtId = convertView.findViewById(R.id.idDelConsejo);
         TextView txtConsejo = convertView.findViewById(R.id.contenidoConsejo);
 
-        txtId.setText(String.valueOf(consejo.getId()));
         txtConsejo.setText(String.valueOf(consejo.getConsejo()));
         return convertView;
     }

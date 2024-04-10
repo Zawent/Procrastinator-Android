@@ -62,7 +62,7 @@ public class InicioBloqueo extends AppCompatActivity {
     private BloqueoAPIService serviceB;
     private AppAPIService serviceA;
 
-
+//aqui se realizan los procesos al abrir la app.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,13 +70,13 @@ public class InicioBloqueo extends AppCompatActivity {
         serviceB = BloqueoAPICliente.getBloqueoService();
         serviceA = AppAPICliente.getAppService();
         User user = DataInfo.respuestaLogin.getUser();
-
+// comprobacion del permiso para superponerse sobre otras apps.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {
             Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                     Uri.parse("package:" + getPackageName()));
             startActivity(intent);
         }
-
+        //aqui se asignan variables a los elementos de la pagina "bloqueador" donde se realizan los bloqueos.
         appSpinner = findViewById(R.id.app_spinner);
         hoursEditText = findViewById(R.id.hours_edittext);
         minutesEditText = findViewById(R.id.minutes_edittext);
@@ -100,6 +100,7 @@ public class InicioBloqueo extends AppCompatActivity {
 
             }
         });
+        //aqui se reciven los bloqueos activos para mostrarlos.
         receiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -115,7 +116,7 @@ public class InicioBloqueo extends AppCompatActivity {
         LocalBroadcastManager.getInstance(this).registerReceiver(receiver, filter);
 
     }
-
+//Aqui se obtienen las aplicaciones del dispositivo.
     @Override
     protected void onStart() {
         super.onStart();
@@ -136,7 +137,7 @@ public class InicioBloqueo extends AppCompatActivity {
             }
         });
     }
-
+//Aqui se listan las aplicaciones si se necesita un bloqueo general.
     public void listarApps (List<App> apps) {
         ArrayAdapter<App> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, apps);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -155,28 +156,30 @@ public class InicioBloqueo extends AppCompatActivity {
             }
         });
     }
-
+//Aqui se listan las apps instaladas.
     private List<String> getInstalledApps(PackageManager packageManager) {
         List<ApplicationInfo> apps = packageManager.getInstalledApplications(0);
-        List<String> packageNames = new ArrayList<>();
-        /*List<App> aplicaciones = new ArrayList<>();
-        serviceA.getAppsUser(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), DataInfo.respuestaLogin.getUser().getId()).enqueue(new Callback<List<App>>() {
-            @Override
-            public void onResponse(Call<List<App>> call, Response<List<App>> response) {
-                //aplicaciones = response.body();
-            }
 
-            @Override
-            public void onFailure(Call<List<App>> call, Throwable t) {
-
-            }
-        });*/
+        List<String> appNames = new ArrayList<>();
 
         for (ApplicationInfo appInfo : apps) {
-            packageNames.add(appInfo.packageName);
-            Log.d("InicioBloqueo", "Package name es " + appInfo.packageName);
+            CharSequence appName = packageManager.getApplicationLabel(appInfo);
+            appNames.add(appName != null ? appName.toString() : appInfo.packageName);
+            Log.d("InicioBloqueo", "Nombre de la aplicación: " + (appName != null ? appName.toString() : appInfo.packageName));
         }
-        String nombres = String.join(";", packageNames);
+        String nombres = String.join(";", appNames);
+
+        // serviceA.crearApp(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), nombres, DataInfo.respuestaLogin.getUser().getId()).enqueue(new Callback<App>() {
+        //     @Override
+        //     public void onResponse(Call<App> call, Response<App> response) {
+        //         Log.i("Hola", String.valueOf(response));
+        //     }
+
+        //     @Override
+        //     public void onFailure(Call<App> call, Throwable t) {
+        //         Log.e("Error", "Error al llamar al servicio", t);
+        //     }
+        // });
 
         serviceA.crearApp(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), nombres, DataInfo.respuestaLogin.getUser().getId()).enqueue(new Callback<App>() {
             @Override
@@ -189,10 +192,10 @@ public class InicioBloqueo extends AppCompatActivity {
                 Log.e("Error", "Error al llamar al servicio", t);
             }
         });
-        return packageNames;
+        return appNames;
     }
 
-
+//Aqui se adquieren los datos de la app que se va a bloquear como el nombre de la misma y tiempo que se bloqueara
     private void Bloquear() {
         App NombreApp=null;
         List<App> nombresApps=null;
@@ -222,7 +225,7 @@ public class InicioBloqueo extends AppCompatActivity {
         }
         String estadoBlock = "Activo";
         Time horaBack = Time.valueOf(String.format("%02d:%02d:00", hours, minutes));
-
+//Tambien se obtiene la zona horaria para determinar el momento en el que se dio inicio al bloqueo.
         if (NombreApp!=null) {
             LocalDateTime time =  LocalDateTime.now();
             ZoneId zoneId = ZoneId.of("-05:00"); // Zona horaria -5
@@ -231,7 +234,7 @@ public class InicioBloqueo extends AppCompatActivity {
             serviceB.crearBloqueo(DataInfo.respuestaLogin.getToken_type()+" "+DataInfo.respuestaLogin.getAccess_token(), tiempo, horaBack, estadoBlock, NombreApp.getId()).enqueue(new Callback<Bloqueo>() {
                 @Override
                 public void onResponse(Call<Bloqueo> call, Response<Bloqueo> response) {
-                    if (response.isSuccessful()) {
+                    if (response.isSuccessful()) {//Aqui se envian los datos del bloqueo a "BloqueoService".
                         int TiempoSegundos = (hours * 60 + minutes) * 60;
                         Intent serviceIntent = new Intent(InicioBloqueo.this, BloqueoService.class);
                         serviceIntent.putExtra("NombreApp", tempApp.getNombre());
@@ -276,7 +279,7 @@ public class InicioBloqueo extends AppCompatActivity {
 
 
     }
-
+//Aqui se obtiene las apps que fueron seleccionadas en la lista.
     private List<App> getSelectedAppsFromListView() {
         ListView appListView = findViewById(R.id.app_listview);
         SparseBooleanArray checkedItems = appListView.getCheckedItemPositions();
@@ -297,6 +300,7 @@ public class InicioBloqueo extends AppCompatActivity {
         return lista;
         //return selectedAppsBuilder.toString();
     }
+    //Aqui en caso de que se seleccione bloqueo general se ocultara el spinner del bloqueo especifico.
     private void BloquearGeneral(ArrayAdapter<App> listViewAdapter) {
         ListView appListView = findViewById(R.id.app_listview);
         appListView.setVisibility(View.VISIBLE);
@@ -311,21 +315,25 @@ public class InicioBloqueo extends AppCompatActivity {
             LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
         }
     }
-
+//Aqui es donde se permite que el usuario se dirija a las diferentes paginas de la app.
     public void irAPerfil(View view) {
         startActivity(new Intent(InicioBloqueo.this, Perfil.class));
+        finish();
     }
 
     public void irAConsejos(View view) {
         startActivity(new Intent(InicioBloqueo.this, MenuConsejoActivity.class));
+        finish();
     }
 
     public void irAMenuInicio(View view){
         startActivity(new Intent(InicioBloqueo.this, MenuInicioActivity.class));
+        finish();
     }
 
     public void irAComodin(View view) {
         startActivity((new Intent(InicioBloqueo.this, comodin.class)));
+        finish();
     }
 
 

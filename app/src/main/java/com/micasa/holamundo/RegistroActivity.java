@@ -28,14 +28,14 @@ public class RegistroActivity extends AppCompatActivity {
 
     private RegisterAPIService service;
     EditText caja1, caja2, caja3, caja4, caja5;
-
+//Se inicia el proceso de registro.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
         service = RegisterAPICliente.getRegisterService();
     }
-
+//Aqui se guardan los datos proporcionados por el usuario en el registro.
     public void guardarUser (View view) {
 
         caja1 = findViewById(R.id.editTextNombre);
@@ -46,12 +46,14 @@ public class RegistroActivity extends AppCompatActivity {
 
         String name = caja1.getText().toString();
         String cajaFecha = caja2.getText().toString();
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha_nacimiento = null;
         try {
             fecha_nacimiento = formato.parse(cajaFecha);
         } catch (ParseException e) {
-            throw new RuntimeException(e);
+            Toast.makeText(this, "La fecha no puede estar vacia", Toast.LENGTH_SHORT).show();
+            return;
+            //throw new RuntimeException(e);
         }
 
         String ocupacion = caja3.getText().toString();
@@ -69,6 +71,7 @@ public class RegistroActivity extends AppCompatActivity {
                     Intent intent = new Intent(RegistroActivity.this, Pregunta1Activity.class);
                     intent.putExtra("user", DataInfo.respuestaLogin.getUser());
                     startActivity(intent);
+                    finish();
                 }else{
                     try {
                         String msg = response.errorBody().string();
@@ -90,6 +93,6 @@ public class RegistroActivity extends AppCompatActivity {
     }
 
     public void irAprincipal(View view) {
-        startActivity((new Intent(RegistroActivity.this, MainActivity.class)));
+        finish();
     }
 }

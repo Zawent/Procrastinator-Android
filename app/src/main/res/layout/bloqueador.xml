@@ -4,175 +4,185 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7B1FA2"
+    android:background="#A52BD8"
     tools:context=".yalogueado.bloqueo.InicioBloqueo">
 
 
-    <ListView
-        android:id="@+id/app_listview"
-        android:layout_width="416dp"
-        android:layout_height="177dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#F9C3F1"
-        android:choiceMode="multipleChoice"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></ListView>
-
-    <Spinner
-        android:id="@+id/app_spinner"
-        android:layout_width="409dp"
-        android:layout_height="181dp"
-        android:background="#FFD4A7"
-        android:backgroundTint="#FFD4A7"
-        android:dropDownHeight="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout6"
-        android:layout_width="427dp"
-        android:layout_height="646dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="#FFFFFF"
+        android:padding="20dp"
+        android:paddingBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/overlayLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_listview">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
-        <TextView
-            android:id="@+id/active_blocks_display"
-            android:layout_width="315dp"
-            android:layout_height="136dp"
-            android:layout_below="@id/active_block_textview"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="61dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/cuadritoblanco"
-            android:padding="15dp"
+        <LinearLayout
+            android:id="@+id/linearLayout10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/active_block_textview" />
-
-        <TextView
-            android:id="@+id/active_block_textview"
-            android:layout_width="253dp"
-            android:layout_height="50dp"
-            android:layout_below="@id/block_button"
-            android:text="Bloqueos activos:"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/active_blocks_display"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/block_button" />
-
-        <Button
-            android:id="@+id/block_button"
-            android:layout_width="181dp"
-            android:layout_height="100dp"
-            android:layout_below="@id/minutes_edittext"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="73dp"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="#D51515"
-            android:text="Bloquear"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/active_block_textview"
-            app:layout_constraintEnd_toEndOf="@+id/botongeneral"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/active_blocks_display"
-            app:layout_constraintTop_toBottomOf="@+id/hours_edittext" />
-
-        <Button
-            android:id="@+id/botongeneral"
-            android:layout_width="161dp"
-            android:layout_height="96dp"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="45dp"
-            android:layout_marginBottom="40dp"
-            android:backgroundTint="#8E6B60"
-            android:text="Bloqueo General"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/minutes_edittext"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/botonespecifico"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.584" />
-
-        <Button
-            android:id="@+id/botonespecifico"
-            android:layout_width="161dp"
-            android:layout_height="96dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="61dp"
-            android:layout_marginBottom="40dp"
-            android:backgroundTint="#7B1FA2"
-            android:text="Bloqueo Especifico"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/hours_edittext"
-            app:layout_constraintEnd_toStartOf="@+id/botongeneral"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout11"
+            app:layout_constraintVertical_bias="1.0">
 
-        <EditText
-            android:id="@+id/minutes_edittext"
-            android:layout_width="171dp"
-            android:layout_height="78dp"
-            android:layout_below="@id/hours_edittext"
-            android:layout_alignStart="@+id/hours_edittext"
-            android:layout_alignEnd="@+id/hours_edittext"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="409dp"
-            android:background="@drawable/redondosnputs"
-            android:hint="Minutos"
-            android:inputType="number"
-            android:padding="10dp"
-            android:textColor="#000000"
-            android:textColorHint="#656565"
+            <Button
+                android:id="@+id/block_button"
+                android:layout_width="178dp"
+                android:layout_height="83dp"
+                android:layout_below="@id/minutes_edittext"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="#D51515"
+                android:text="Bloquear"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/active_block_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/block_button"
+                android:layout_marginBottom="15dp"
+                android:text="Bloqueos activos:"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/active_blocks_display"
+                android:layout_width="315dp"
+                android:layout_height="136dp"
+                android:layout_below="@id/active_block_textview"
+                android:background="@drawable/cuadritoblanco"
+                android:padding="15dp"
+                android:textColor="#000000"
+                android:textColorHint="#000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.904"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/hours_edittext"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
 
-        <EditText
-            android:id="@+id/hours_edittext"
-            android:layout_width="171dp"
-            android:layout_height="78dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="45dp"
-            android:layout_marginBottom="40dp"
-            android:background="@drawable/redondosnputs"
-            android:hint="Horas"
-            android:inputType="number"
-            android:padding="10dp"
-            android:textColorHint="#656565"
-            app:layout_constraintBottom_toTopOf="@+id/block_button"
-            app:layout_constraintEnd_toStartOf="@+id/minutes_edittext"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/botonespecifico" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/botonespecifico"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
+                    android:backgroundTint="#B6654C"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:text="Bloqueo Especifico"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/botongeneral"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#8E6B60"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:text="Bloqueo General"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="Horas:"
+                    android:textColor="#000000"
+                    android:textColorHighlight="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="40dp"
+                    android:text="Minutos:"
+                    android:textColor="#000000"
+                    android:textColorHighlight="#000000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/hours_edittext"
+                    android:layout_width="140dp"
+                    android:layout_height="78dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/redondosnputs"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textColorHint="#656565" />
+
+                <EditText
+                    android:id="@+id/minutes_edittext"
+                    android:layout_width="140dp"
+                    android:layout_height="78dp"
+                    android:layout_below="@id/hours_edittext"
+                    android:layout_alignStart="@+id/hours_edittext"
+                    android:layout_alignEnd="@+id/hours_edittext"
+
+                    android:background="@drawable/redondosnputs"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:text="30"
+                    android:textColor="#000000"
+                    android:textColorHint="#656565" />
+            </LinearLayout>
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:id="@+id/overlayLayout"
-        android:layout_width="433dp"
+        android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="#5D0582"
         android:orientation="horizontal"
@@ -180,53 +190,85 @@
         android:paddingRight="2sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#5D0582"
-            android:src="@drawable/candado__1_" />
+            android:backgroundTint="#451559"
+            android:src="@drawable/candadogrande" />
 
         <ImageButton
             android:id="@+id/imageButton2"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#451559"
+            android:backgroundTint="#5D0582"
             android:onClick="irAPerfil"
-            android:src="@drawable/usuario__2_" />
+            android:src="@drawable/usuario" />
 
         <ImageButton
             android:id="@+id/imageButton3"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:onClick="irAMenuInicio"
-            android:src="@drawable/grafico__1_" />
+            android:src="@drawable/grafico" />
 
         <ImageButton
             android:id="@+id/imageButton4"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#451559"
+            android:backgroundTint="#5D0582"
             android:onClick="irAConsejos"
-            android:src="@drawable/consejos__1_" />
+            android:src="@drawable/consejos" />
 
         <ImageButton
             android:id="@+id/imageButton5"
-            android:layout_width="89dp"
-            android:layout_height="93dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="#5D0582"
             android:onClick="irAComodin"
-            android:src="@drawable/llave__1_" />
+            android:src="@drawable/llave" />
 
     </LinearLayout>
+
+    <ListView
+        android:id="@+id/app_listview"
+        android:layout_width="match_parent"
+        android:layout_height="154dp"
+        android:layout_centerHorizontal="true"
+        android:background="#F9C3F1"
+        android:backgroundTint="#A52BD8"
+        android:choiceMode="multipleChoice"
+        android:textColor="#FFFFFF"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ListView>
+
+    <Spinner
+        android:id="@+id/app_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFD4A7"
+        android:backgroundTint="#A52BD8"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="19dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

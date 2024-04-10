@@ -29,7 +29,7 @@ public class comodin extends AppCompatActivity {
     private TextView textViewCantComodin;
     private ComodinAPIService comodinService;
     User user;
-
+//Aqui se inician los procesos para determinar los comodines disponibles al iniciar la app.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +52,7 @@ public class comodin extends AppCompatActivity {
             }
         });
     }
-
+//Una vez se logea el usuario se muestra la cantida de comodines que este posee.
     @Override
     protected void onStart() {
         super.onStart();
@@ -74,17 +74,21 @@ public class comodin extends AppCompatActivity {
 
     public void irAPerfil(View view) {
         startActivity(new Intent(comodin.this, Perfil.class));
+        finish();
     }
 
     public void irAConsejos(View view) {
         startActivity(new Intent(comodin.this, MenuConsejoActivity.class));
+        finish();
     }
 
     public void irABloqueo(View view) {
         startActivity((new Intent(comodin.this, InicioBloqueo.class)));
+        finish();
     }
 
     public void irAMenuInicio(View view){
         startActivity(new Intent(comodin.this, MenuInicioActivity.class));
+        finish();
     }
 }

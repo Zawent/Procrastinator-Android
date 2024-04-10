@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ConsejoAPICliente {
 
-    private static final String URL = "http://10.201.194.108:8000/api/";
+    private static final String URL = "https://procras.api.adsocidm.com/api/";
     private static ConsejoAPIService instance;
 
     public static ConsejoAPIService getConsejoService() {
