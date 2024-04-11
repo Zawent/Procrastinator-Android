@@ -47,7 +47,7 @@ public class FinEncuestaActivity extends AppCompatActivity {
         service = LoginAPICliente.getLoginService();
         serviceN = NivelAPICliente.getNivelService();
     }
-/*Aqui se inicia la encuesta y se obtienen las respuestas de la misma.*/
+/**Aqui se inicia la encuesta y se obtienen las respuestas de la misma.*/
     @Override
     protected void onStart() {
         super.onStart();

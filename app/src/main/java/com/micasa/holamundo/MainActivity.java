@@ -27,6 +27,9 @@ import com.micasa.holamundo.network.LoginAPICliente;
 import com.micasa.holamundo.network.LoginAPIService;
 import com.micasa.holamundo.yalogueado.MenuInicioActivity;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -41,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private GoogleSignInClient gsc;
     private static final int REQ_ONE_TAP = 2;  // Can be any integer unique to the Activity.
     private boolean showOneTapUI = true;
-/*Proceso para el inicio de sesion por medio de google (No implementado)*/
+/**Proceso para el inicio de sesion por medio de google (No implementado)*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void validarInicio() {
-        //Leer Shared
+        /**Leer Shared*/
         SharedPreferences usuario = MainActivity.this.getSharedPreferences("token", MODE_PRIVATE);
         String token = usuario.getString("token", null);
         if (token!=null) {
@@ -109,9 +112,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        //FirebaseUser currentUser = mAuth.getCurrentUser();
-        //updateUI(currentUser);
+        TimerTask tarea = new TimerTask() {
+            @Override
+            public void run() {
+                validarInicio();
+                finish();
+            }
+        };
 
+        Timer tiempo = new Timer();
+        tiempo.schedule(tarea, 2000);
     }
 
     public void login (View view) {
